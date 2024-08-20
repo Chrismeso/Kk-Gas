@@ -57,7 +57,7 @@ fun HomeScreen(navController: NavController){
         )
 
         Text(
-            text = "Property Plus",
+            text = "Kk Gas",
             fontSize = 40.sp,
             fontFamily = FontFamily.Cursive,
             color = Color.White
@@ -68,7 +68,7 @@ fun HomeScreen(navController: NavController){
         Spacer(modifier = Modifier.height(20.dp))
 
         Text(
-            text ="Your better choice",
+            text =" We are top because we deliver",
             fontSize = 30.sp,
 
         )
