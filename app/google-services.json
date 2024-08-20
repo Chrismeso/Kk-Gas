@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "322926372605",
+    "project_id": "kk-gas",
+    "storage_bucket": "kk-gas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322926372605:android:699a156fe0c816d9dc4094",
+        "android_client_info": {
+          "package_name": "com.example.kkgas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZkELVE4cr0IYBCLc5c9Yr2c2OY1-Epm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
