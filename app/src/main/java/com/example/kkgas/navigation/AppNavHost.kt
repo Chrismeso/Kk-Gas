@@ -13,7 +13,8 @@ import com.example.kkgas.ui.theme.screens.home.HomeScreen
 import com.example.kkgas.ui.theme.screens.login.LoginScreen
 import com.example.kkgas.ui.theme.screens.signup.SignupScreen
 import com.example.kkgas.ui.theme.screens.splash.SplashScreen
-import com.example.propertyplusapp.ui.theme.screens.gas.AddGasScreen
+import com.example.kkgas.ui.theme.screens.gas.AddGasScreen
+import com.example.kkgas.ui.theme.screens.gas.ViewGasScreen
 
 @Composable
 fun AppNavHost(
@@ -53,5 +54,9 @@ fun AppNavHost(
         composable(ROUT_VIEWGAS) {
             ViewGasScreen(navController = navController)
         }
+        composable(ROUT_MOREINFO) {
+            MoreInfoScreen(navController = navController)
+        }
+
     }
 }

@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
+import com.example.kkgas.navigation.ROUT_ADDGAS
 import com.example.kkgas.navigation.ROUT_DETAILS
 import com.example.kkgas.navigation.ROUT_HOME
 import com.example.kkgas.ui.theme.lightblue
@@ -111,7 +112,7 @@ fun DashboardScreen(navController: NavController){
                     //Second card
                     Card(modifier = Modifier
                         .width(160.dp)
-                        .height(180.dp).clickable { navController.navigate(ADD_PRODUCTS_URL) },elevation = CardDefaults.cardElevation(10.dp)) {
+                        .height(180.dp).clickable { navController.navigate(ROUT_ADDGAS) },elevation = CardDefaults.cardElevation(10.dp)) {
                         Column {
                             Spacer(modifier = Modifier.height(10.dp))
                             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center ) {
@@ -136,6 +137,66 @@ fun DashboardScreen(navController: NavController){
 
                 }
                     //end of row1
+                //Row 1
+                Row (modifier = Modifier.padding(20.dp)){
+                    //first card
+                    Card(modifier = Modifier
+                        .width(160.dp)
+                        .height(180.dp)
+                        .clickable { navController.navigate(ROUT_DETAILS) },
+                        elevation = CardDefaults.cardElevation(10.dp)) {
+                        Column {
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.details) , contentDescription = "home" , modifier = Modifier.size(100.dp)
+                                )
+
+                            }
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Text(
+                                text = "Details",
+                                fontSize = 18.sp,
+                                modifier = Modifier.fillMaxWidth(),
+                                textAlign = TextAlign.Center,
+                                fontFamily = FontFamily.Serif
+                            )
+                        }
+
+                    }
+                    //end of first card
+                    Spacer(modifier = Modifier.width(20.dp))
+
+                    //Second card
+                    Card(modifier = Modifier
+                        .width(160.dp)
+                        .height(180.dp).clickable { navController.navigate(ROUT_ADDGAS) },elevation = CardDefaults.cardElevation(10.dp)) {
+                        Column {
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.add) , contentDescription = "home" , modifier = Modifier.size(100.dp)
+                                )
+
+                            }
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Text(
+                                text = "Add product",
+                                fontSize = 18.sp,
+                                modifier = Modifier.fillMaxWidth(),
+                                textAlign = TextAlign.Center,
+                                fontFamily = FontFamily.Serif
+
+                            )
+                        }
+
+                    }
+                    //end of second card
+
+                }
+                //end of row1
+
+
 
 
             }

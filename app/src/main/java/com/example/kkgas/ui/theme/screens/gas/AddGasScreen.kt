@@ -1,4 +1,4 @@
-package com.example.propertyplusapp.ui.theme.screens.gas
+package com.example.kkgas.ui.theme.screens.gas
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -61,8 +61,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.propertyplusapp.data.ProductViewModel
-import com.example.propertyplusapp.navigation.ADD_PRODUCTS_URL
+import com.example.kkgas.data.GasViewModel
+import com.example.kkgas.models.Gas
+import com.example.kkgas.navigation.ROUT_ADDGAS
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -124,7 +125,7 @@ fun AddGasScreen(navController:NavController){
                     containerColor = Color.LightGray
                 ) {
                     IconButton(onClick = {
-                        navController.navigate(ADD_PRODUCTS_URL)
+                        navController.navigate(ROUT_ADDGAS)
                     }) {
                         Icon(imageVector = Icons.Default.Add,
                             contentDescription = "menu")
@@ -177,8 +178,8 @@ fun AddGasScreen(navController:NavController){
                     Spacer(modifier = Modifier.height(10.dp))
 
                     OutlinedTextField(
-                        value = productPrice,
-                        onValueChange = { productPrice = it },
+                        value = gasPrice,
+                        onValueChange = { gasPrice = it },
                         label = { Text(text = "Product price e.g Ksh.500") },
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
                     )
@@ -199,7 +200,7 @@ fun AddGasScreen(navController:NavController){
                     //---------------------IMAGE PICKER START-----------------------------------//
 
                     var modifier = Modifier
-                    ImagePicker(modifier,context, navController, productName.trim(), productQuantity.trim(), productPrice.trim(),phone.trim())
+                    ImagePicker(modifier,context, navController, gasName.trim(), gasQuantity.trim(), gasPrice.trim(),phone.trim())
 
                     //---------------------IMAGE PICKER END-----------------------------------//
 
@@ -310,8 +311,8 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context, navController: 
 
             Button(onClick = {
                 //-----------WRITE THE UPLOAD LOGIC HERE---------------//
-                var productRepository = ProductViewModel(navController, context)
-                productRepository.uploadProduct(name, quantity, price,phone,imageUri!!)
+                var productRepository = GasViewModel(navController, context)
+                productRepository.uploadGas(name, quantity, price,phone,imageUri!!)
 
 
             },

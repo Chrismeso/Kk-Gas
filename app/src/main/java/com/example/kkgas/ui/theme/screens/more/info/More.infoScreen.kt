@@ -62,7 +62,7 @@ import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
-import com.example.kkgas.ui.theme.lighgreen
+import com.example.kkgas.ui.theme.lightgreen
 import com.example.kkgas.ui.theme.lightgreen
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -218,8 +218,8 @@ fun PropertyScreen(navController: NavController){
                     //SMS
                     Button(
                         onClick = {  val smsIntent= Intent(Intent.ACTION_SENDTO)
-                            smsIntent.data="smsto:0720245837".toUri()
-                            smsIntent.putExtra("sms_body","Hello ,how was your day?")
+                            smsIntent.data="smsto:0112577059".toUri()
+                            smsIntent.putExtra("sms_body","Hello ,how was your day and how may help you?")
                             mContext.startActivity(smsIntent) },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -239,7 +239,7 @@ fun PropertyScreen(navController: NavController){
                             shareIntent.type = "text/plain"
                             shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("akinyiglory2@gmail.com"))
                             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject")
-                            shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is the email body")
+                            shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is the our email body")
                             mContext.startActivity(shareIntent)},
                         modifier = Modifier
                             .fillMaxWidth()

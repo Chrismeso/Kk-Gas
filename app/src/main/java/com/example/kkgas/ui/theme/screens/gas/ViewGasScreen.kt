@@ -59,19 +59,19 @@ import androidx.core.net.toUri
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
-import com.example.propertyplusapp.data.ProductViewModel
-import com.example.propertyplusapp.models.Product
-import com.example.propertyplusapp   .navigation.ADD_PRODUCTS_URL
+import com.example.kkgas.data.GasViewModel
+import com.example.kkgas.models.Gas
+import com.example.kkgas.navigation.ROUT_ADDGAS
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun ViewGasProductsScreen(navController:NavHostController) {
+fun ViewGasScreen(navController:NavHostController) {
     Column(modifier = Modifier.fillMaxSize()) {
 
         var context = LocalContext.current
-        var productRepository = ProductViewModel(navController, context)
+        var productRepository = GasViewModel(navController, context)
 
 
         val emptyProductState = remember { mutableStateOf(Gas("","","","","","")) }
@@ -137,7 +137,7 @@ fun ViewGasProductsScreen(navController:NavHostController) {
                     onClick = { /*TODO*/ },
                     containerColor = Color.LightGray) {
                     IconButton(onClick = {
-                        navController.navigate(ADD_PRODUCTS_URL)
+                        navController.navigate(ROUT_ADDGAS)
                     }) {
                         Icon(imageVector = Icons.Default.Add,
                             contentDescription = "menu")
@@ -189,7 +189,7 @@ fun ViewGasProductsScreen(navController:NavHostController) {
 @Composable
 fun ProductItem(name:String, quantity:String, price:String,phone:String, id:String,
                 navController:NavHostController,
-                productRepository:ProductViewModel, productImage:String) {
+                productRepository:GasViewModel, productImage:String) {
 
     //1 item
     Column(modifier = Modifier
@@ -314,8 +314,8 @@ fun ProductItem(name:String, quantity:String, price:String,phone:String, id:Stri
 
 @Composable
 @Preview(showBackground = true)
-fun ViewProductsScreenPreview(){
+fun ViewGasScreenPreview(){
 
-    ViewProductsScreen(navController = rememberNavController())
+    ViewGasScreen(navController = rememberNavController())
 
 }
