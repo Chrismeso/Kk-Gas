@@ -8,10 +8,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.propertyplusapp.ui.theme.screens.about.AboutScreen
 import com.example.kkgas.ui.theme.screens.dashboard.DashboardScreen
+import com.example.kkgas.ui.theme.screens.details.DetailsScreen
 import com.example.kkgas.ui.theme.screens.home.HomeScreen
 import com.example.kkgas.ui.theme.screens.login.LoginScreen
 import com.example.kkgas.ui.theme.screens.signup.SignupScreen
 import com.example.kkgas.ui.theme.screens.splash.SplashScreen
+import com.example.propertyplusapp.ui.theme.screens.gas.AddGasScreen
 
 @Composable
 fun AppNavHost(
@@ -41,6 +43,15 @@ fun AppNavHost(
         }
         composable(ROUT_DASHBOARD) {
             DashboardScreen(navController = navController)
+        }
+        composable(ROUT_DETAILS) {
+            DetailsScreen(navController = navController)
+        }
+        composable(ROUT_ADDGAS) {
+            AddGasScreen(navController = navController)
+        }
+        composable(ROUT_VIEWGAS) {
+            ViewGasScreen(navController = navController)
         }
     }
 }

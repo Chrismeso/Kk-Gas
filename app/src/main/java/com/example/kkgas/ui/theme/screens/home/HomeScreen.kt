@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.style.TextAlign
 
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -31,8 +32,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
+import com.example.kkgas.navigation.ROUT_DASHBOARD
 import com.example.kkgas.ui.theme.lightblue
-import com.example.kkgas.ui.theme.Lavender
+import com.example.kkgas.ui.theme.lightgreen
 
 
 
@@ -40,14 +42,14 @@ import com.example.kkgas.ui.theme.Lavender
 fun HomeScreen(navController: NavController){
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(Lavender),
+        .background(lightgreen),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
 
         Image(
-            painter = painterResource(id = R.drawable.homeimage),
+            painter = painterResource(id = R.drawable.gashome),
             contentDescription ="home",
             modifier = Modifier
                 .size(250.dp)
@@ -62,6 +64,7 @@ fun HomeScreen(navController: NavController){
             fontFamily = FontFamily.Cursive,
             color = Color.White
 
+
             )
 
 
@@ -70,10 +73,25 @@ fun HomeScreen(navController: NavController){
         Text(
             text =" We are top because we deliver",
             fontSize = 30.sp,
+            textAlign = TextAlign.Center
 
         )
 
         Spacer(modifier = Modifier.height(200.dp))
+
+        Button(
+            onClick = { navController.navigate(ROUT_DASHBOARD) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp)
+                .padding(start = 20.dp, end = 20.dp),
+            colors = ButtonDefaults.buttonColors(lightblue),
+            shape = RoundedCornerShape(10.dp)
+        ) {
+
+            Text(text = "Click to move on")
+
+        }
 
 
 
