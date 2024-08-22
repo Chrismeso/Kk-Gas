@@ -19,6 +19,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Send
@@ -67,7 +68,7 @@ import com.example.kkgas.navigation.ROUT_ADDGAS
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun ViewGasScreen(navController:NavHostController) {
+fun ViewGasScreenBuyer(navController:NavHostController) {
     Column(modifier = Modifier.fillMaxSize()) {
 
         var context = LocalContext.current
@@ -160,7 +161,7 @@ fun ViewGasScreen(navController:NavHostController) {
 
                     LazyColumn(){
                         items(products){
-                            ProductItem(
+                            ProductItem1(
                                 name = it.name,
                                 quantity = it.quantity,
                                 price = it.price,
@@ -187,7 +188,7 @@ fun ViewGasScreen(navController:NavHostController) {
 
 
 @Composable
-fun ProductItem(name:String, quantity:String, price:String,phone:String, id:String,
+fun ProductItem1(name:String, quantity:String, price:String,phone:String, id:String,
                 navController:NavHostController,
                 productRepository:GasViewModel, productImage:String) {
 
@@ -258,41 +259,24 @@ fun ProductItem(name:String, quantity:String, price:String,phone:String, id:Stri
                         ){
                             OutlinedButton(
                                 onClick = {
-                                    val smsIntent= Intent(Intent.ACTION_SENDTO)
-                                    smsIntent.data="smsto:$phone".toUri()
-                                    smsIntent.putExtra("sms_body","Hello Buyer,...?")
-                                    mContext.startActivity(smsIntent)
+                                    val callIntent= Intent(Intent.ACTION_DIAL)
+                                    callIntent.data="tel:$phone".toUri()
+                                    mContext.startActivity(callIntent)
                                 },
                                 shape = RoundedCornerShape(8.dp),
 
                                 ) {
                                 Row {
                                     Icon(
-                                        imageVector = Icons.Default.Send,
-                                        contentDescription = "Message Seller")
+                                        imageVector = Icons.Default.Call,
+                                        contentDescription = "")
                                     Spacer(modifier = Modifier.width(3.dp))
                                     Text(
-                                        text = "Message Buyer"
+                                        text = "Call"
                                     )
                                 }
                             }
-                            Row (
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.End
-                            ){
 
-                                IconButton(onClick = { productRepository.updateProduct(id) }) {
-                                    Icon(imageVector = Icons.Default.Edit, contentDescription = "", tint = Color.White)
-                                }
-
-                                Spacer(modifier = Modifier.width(5.dp))
-
-                                IconButton(onClick = { productRepository.deleteProduct(id) }) {
-                                    Icon(imageVector = Icons.Default.Delete, contentDescription = "", tint = Color.White)
-                                }
-
-
-                            }
 
                         }
                         //end of button row
@@ -314,8 +298,8 @@ fun ProductItem(name:String, quantity:String, price:String,phone:String, id:Stri
 
 @Composable
 @Preview(showBackground = true)
-fun ViewGasScreenPreview(){
+fun ViewGasScreenBuyerPreview(){
 
-    ViewGasScreen(navController = rememberNavController())
+    ViewGasScreenBuyer(navController = rememberNavController())
 
 }

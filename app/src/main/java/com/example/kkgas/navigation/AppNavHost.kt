@@ -15,6 +15,7 @@ import com.example.kkgas.ui.theme.screens.signup.SignupScreen
 import com.example.kkgas.ui.theme.screens.splash.SplashScreen
 import com.example.kkgas.ui.theme.screens.gas.AddGasScreen
 import com.example.kkgas.ui.theme.screens.gas.ViewGasScreen
+import com.example.kkgas.ui.theme.screens.more.info.MoreInfoScreen
 
 @Composable
 fun AppNavHost(

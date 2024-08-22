@@ -43,23 +43,21 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
 import com.example.kkgas.data.AuthViewModel
-import com.example.kkgas.navigation.ROUT_HOME
 import com.example.kkgas.navigation.ROUT_SIGNUP
-import com.example.kkgas.navigation.ROUT_SPLASH
-import com.example.kkgas.ui.theme.lightblue
+import com.example.kkgas.ui.theme.lightgreen
 
 @Composable
 
 fun LoginScreen(navController: NavController){
     Column (
         modifier = Modifier.fillMaxSize()
-            .paint(painterResource(id = R.drawable.background), contentScale = ContentScale.FillBounds),
+            .paint(painterResource(id = R.drawable.greenbackground), contentScale = ContentScale.FillBounds),
         horizontalAlignment = Alignment.CenterHorizontally){
 
         Spacer(modifier = Modifier.height(10.dp))
 
         Image(
-            painter = painterResource(id = R.drawable.property),
+            painter = painterResource(id = R.drawable.gasicon2),
             contentDescription ="home",
             modifier = Modifier
                 .size(200.dp),
@@ -92,7 +90,7 @@ fun LoginScreen(navController: NavController){
         OutlinedTextField(
             value = email,
             onValueChange ={ email = it},
-            label = { Text(text = "Email Address :", fontWeight = FontWeight.Bold)},
+            label = { Text(text = "Email Address :", fontWeight = FontWeight.Bold) },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
@@ -104,7 +102,7 @@ fun LoginScreen(navController: NavController){
         OutlinedTextField(
             value = password,
             onValueChange ={ password = it},
-            label = { Text(text = "Password :", fontWeight = FontWeight.Bold)},
+            label = { Text(text = "Password :", fontWeight = FontWeight.Bold) },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
@@ -122,10 +120,10 @@ fun LoginScreen(navController: NavController){
                 .fillMaxWidth()
                 .height(50.dp)
                 .padding(start = 20.dp, end = 20.dp),
-            colors = ButtonDefaults.buttonColors(lightblue),
+            colors = ButtonDefaults.buttonColors(lightgreen),
             shape = RoundedCornerShape(10.dp)
         ) {
-            Text(text = "Login")
+            Text(text = "Login as buyer")
 
         }
         Spacer(modifier = Modifier.height(20.dp))
@@ -138,6 +136,21 @@ fun LoginScreen(navController: NavController){
             textAlign = TextAlign.Center
 
         )
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Button(
+            onClick = { authViewModel.loginseller(email, password) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp)
+                .padding(start = 20.dp, end = 20.dp),
+            colors = ButtonDefaults.buttonColors(lightgreen),
+            shape = RoundedCornerShape(10.dp)
+        ) {
+            Text(text = "Login as seller")
+
+        }
+
 
 
     }

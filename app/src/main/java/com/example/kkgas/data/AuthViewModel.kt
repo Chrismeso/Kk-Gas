@@ -5,6 +5,7 @@ import android.content.Context
 import android.widget.Toast
 import androidx.navigation.NavController
 import com.example.kkgas.models.User
+import com.example.kkgas.navigation.ROUT_ADDGAS
 
 import com.example.kkgas.navigation.ROUT_DASHBOARD
 import com.example.kkgas.navigation.ROUT_HOME
@@ -68,6 +69,27 @@ class AuthViewModel(var navController: NavController, var context: Context){
                 if (it.isSuccessful){
                     Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
                     navController.navigate(ROUT_DASHBOARD)
+                }else{
+                    Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        }
+    }
+
+
+    fun loginseller(email: String, password: String){
+        progress.show()
+
+        if (email.isBlank() || password.isBlank()){
+            progress.dismiss()
+            Toast.makeText(context,"Please email and password cannot be blank", Toast.LENGTH_LONG).show()
+        }else {
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
+                progress.dismiss()
+                if (it.isSuccessful){
+                    Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
+                    navController.navigate(ROUT_ADDGAS)
                 }else{
                     Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
                 }

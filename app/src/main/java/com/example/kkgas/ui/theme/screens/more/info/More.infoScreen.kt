@@ -64,12 +64,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
 import com.example.kkgas.ui.theme.lightgreen
 import com.example.kkgas.ui.theme.lightgreen
+import com.example.kkgas.ui.theme.wondergreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 
-fun PropertyScreen(navController: NavController){
+fun MoreInfoScreen(navController: NavController){
     Column (modifier = Modifier.fillMaxSize()){
         var selected by remember { mutableIntStateOf(0) }
         Scaffold(
@@ -114,7 +115,7 @@ fun PropertyScreen(navController: NavController){
                     title = {
                         Text(text = "Kk Gas",
                         fontFamily = FontFamily.Serif) },
-                    colors = TopAppBarDefaults.mediumTopAppBarColors(Color.Red)
+                    colors = TopAppBarDefaults.mediumTopAppBarColors(wondergreen)
                 )
             },
 
@@ -169,17 +170,18 @@ fun PropertyScreen(navController: NavController){
 
                             )
                             Row {
-                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Cyan, modifier = Modifier.size(30.dp))
-                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Cyan, modifier = Modifier.size(30.dp))
-                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Cyan, modifier = Modifier.size(30.dp))
-                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Cyan, modifier = Modifier.size(30.dp))
-                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Cyan, modifier = Modifier.size(30.dp))
+                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
+                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
+                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
+                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
+                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
                             }
                             Text(text = "The reliable LPG gas ypu can find")
                             Text(text = "14,400 Reviews")
                             val mContext = LocalContext.current
                             Button(
-                                onClick = {val callIntent= Intent(Intent.ACTION_DIAL)
+                                onClick = {
+                                    val callIntent= Intent(Intent.ACTION_DIAL)
                                     callIntent.data="tel:0112577059".toUri()
                                     mContext.startActivity(callIntent)
                                 },
@@ -201,7 +203,7 @@ fun PropertyScreen(navController: NavController){
                     //CALL
                     Button(
                         onClick = { val callIntent= Intent(Intent.ACTION_DIAL)
-                            callIntent.data="tel:0720245837".toUri()
+                            callIntent.data="tel:0112577059".toUri()
                             mContext.startActivity(callIntent)},
                         modifier = Modifier
                             .fillMaxWidth()
@@ -237,7 +239,7 @@ fun PropertyScreen(navController: NavController){
                     Button(
                         onClick = {  val shareIntent = Intent(Intent.ACTION_SEND)
                             shareIntent.type = "text/plain"
-                            shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("akinyiglory2@gmail.com"))
+                            shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("chrismwikamaba745@gmail.com"))
                             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject")
                             shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is the our email body")
                             mContext.startActivity(shareIntent)},
@@ -252,6 +254,16 @@ fun PropertyScreen(navController: NavController){
                         Text(text = "Email")
 
                     }
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Text(
+                        text = "We deliver anywhere anytime and cut the competition",
+                        fontSize = 25.sp,
+                        fontFamily = FontFamily.Cursive,
+                        color = Color.Black
+
+
+
+                    )
 
 
 
@@ -296,14 +308,7 @@ val bottomNavItems = listOf(
         hasNews = true,
         badges=1
     ),
-    BottomNavItem(
-        title = "About",
-        route="about",
-        selectedIcon=Icons.Filled.Face,
-        unselectedIcon=Icons.Outlined.Face,
-        hasNews = true,
-        badges=1
-    ),
+
 
 
     )
@@ -326,8 +331,8 @@ data class BottomNavItem(
 
 @Composable
 @Preview(showBackground = true)
-fun PropertyScreenPreview(){
-    PropertyScreen(rememberNavController())
+fun MoreInfoPreview(){
+    MoreInfoScreen(rememberNavController())
 
 
 }

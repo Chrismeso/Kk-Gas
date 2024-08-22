@@ -53,14 +53,14 @@ import com.example.kkgas.ui.theme.lightblue
 fun SignupScreen(navController: NavController){
     Column (modifier = Modifier
         .fillMaxSize()
-        .paint(painterResource(id = R.drawable.background), contentScale = ContentScale.FillBounds),
+        .paint(painterResource(id = R.drawable.greenbackground), contentScale = ContentScale.FillBounds),
         horizontalAlignment = Alignment.CenterHorizontally
         ){
 
         Spacer(modifier = Modifier.height(10.dp))
 
         Image(
-            painter = painterResource(id = R.drawable.property),
+            painter = painterResource(id = R.drawable.gasicon2),
             contentDescription ="home",
             modifier = Modifier
                 .size(200.dp),
