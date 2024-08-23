@@ -94,8 +94,9 @@ fun LoginScreen(navController: NavController){
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
-            leadingIcon = { Icon(imageVector = Icons.Default.Email, contentDescription = "person", tint = Color.Red) },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+            leadingIcon = { Icon(imageVector = Icons.Default.Email, contentDescription = "person", tint = lightgreen) },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+            shape = RoundedCornerShape(20.dp)
         )
         Spacer(modifier = Modifier.height(10.dp))
 
@@ -106,9 +107,10 @@ fun LoginScreen(navController: NavController){
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
-            leadingIcon = { Icon(imageVector = Icons.Default.Lock, contentDescription = "person", tint = Color.Red) },
+            leadingIcon = { Icon(imageVector = Icons.Default.Lock, contentDescription = "person", tint = lightgreen) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            visualTransformation = PasswordVisualTransformation()
+            visualTransformation = PasswordVisualTransformation(),
+            shape = RoundedCornerShape(20.dp)
         )
         val context = LocalContext.current
         val authViewModel = AuthViewModel(navController, context)

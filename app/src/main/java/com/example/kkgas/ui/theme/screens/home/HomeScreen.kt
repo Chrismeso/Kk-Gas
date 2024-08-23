@@ -76,6 +76,13 @@ fun HomeScreen(navController: NavController){
             textAlign = TextAlign.Center
 
         )
+        Spacer(modifier = Modifier.height(200.dp))
+        Text(
+            text ="So get your gas with Kk Gas",
+            fontSize = 30.sp,
+            textAlign = TextAlign.Center
+
+        )
 
         Spacer(modifier = Modifier.height(200.dp))
 

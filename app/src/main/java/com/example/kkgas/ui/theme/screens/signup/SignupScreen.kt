@@ -69,10 +69,10 @@ fun SignupScreen(navController: NavController){
         Spacer(modifier = Modifier.height(10.dp))
 
         Text(
-            text = "Property Plus",
+            text = "Welcome to Kk Gas",
             fontSize = 40.sp,
             fontFamily = FontFamily.Cursive,
-            color = Color.Cyan
+            color = Color.Green
 
         )
         var name by remember { mutableStateOf("") }
