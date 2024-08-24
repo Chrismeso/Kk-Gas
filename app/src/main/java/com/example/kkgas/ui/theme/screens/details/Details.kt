@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
@@ -53,7 +54,11 @@ import com.example.kkgas.ui.theme.wondergreen
 fun DetailsScreen(navController: NavController){
 
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+
+
     ) {
 
 
@@ -130,276 +135,79 @@ fun DetailsScreen(navController: NavController){
             .padding(20.dp)
             .horizontalScroll(rememberScrollState())) {
             //CARD 1
+            Row {
 
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
+                Card(
+                    modifier = Modifier
+                        .height(180.dp)
+                        .width(200.dp)
+                ) {
 
-               Row {
-                   Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-
-                       Image(
-                           painter = painterResource(id = R.drawable.promini),
-                           contentDescription ="home",
-                           modifier = Modifier.fillMaxSize(),
-                           contentScale = ContentScale.Crop
-                       ) }
-                   }
-               }
-            Column (
-                modifier = Modifier.padding(10.dp),
-                horizontalAlignment = Alignment.Start
-                ){
-                Text(
-                    text = "6Kg Pro mini gas ",
-                    modifier = Modifier.padding(top = 70.dp),
-                    fontFamily = FontFamily.Serif
-                )
-
-                Text(
-                    text = "ksh 4000 ",
-                    modifier = Modifier.padding(top = 10.dp),
-                    fontFamily = FontFamily.Serif
-                )
-
-
-            }
-            Spacer(modifier = Modifier.width(40.dp))
-            //card2
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
-
-              Row {
-                  Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-
-                      Image(
-                          painter = painterResource(id = R.drawable.mpishimini),
-                          contentDescription ="home",
-                          modifier = Modifier.fillMaxSize(),
-                          contentScale = ContentScale.Crop
-                      )
-
-                      Spacer(modifier = Modifier.height(20.dp))
-                  }
-                 Column (  modifier = Modifier.padding(10.dp),
-                     horizontalAlignment = Alignment.Start){
-
-                     Text(
-                         text = "6Kg mpishi gas ",
-                         modifier = Modifier.padding(top = 70.dp),
-                         fontFamily = FontFamily.Serif
-                     )
-
-                     Text(
-                         text = "ksh 4500 ",
-                         modifier = Modifier.padding(top = 10.dp),
-                         fontFamily = FontFamily.Serif
-                     )
-
-                 }
-
-
-              }
-
-            }
-            Spacer(modifier = Modifier.width(40.dp))
-            //card 3
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
-
-                Row {
-                    Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-
-                        Image(
-                            painter = painterResource(id = R.drawable.kgasmini),
-                            contentDescription ="home",
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
-
-                        Spacer(modifier = Modifier.height(20.dp))
-                    }
-                    Column (modifier = Modifier.padding(10.dp),
-                        horizontalAlignment = Alignment.Start){
-                        Text(
-                            text = "6Kg Kgas gas ",
-                            modifier = Modifier.padding(top = 70.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-                        Text(
-                            text = "ksh 4500 ",
-                            modifier = Modifier.padding(top = 10.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-                    }
-
-                }
-                }
-            Spacer(modifier = Modifier.width(40.dp))
-            // Card 4
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
-                Row {
 
                     Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
                         Image(
-                            painter = painterResource(id = R.drawable.totalmini),
-                            contentDescription ="home",
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
-
-                        Spacer(modifier = Modifier.height(20.dp))
-                    }
-                    Column (modifier = Modifier.padding(10.dp),
-                        horizontalAlignment = Alignment.Start){
-                        Text(
-                            text = "6Kg total gas ",
-                            modifier = Modifier.padding(top = 70.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-                        Text(
-                            text = "ksh 4500 ",
-                            modifier = Modifier.padding(top = 10.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-
-                    }
-                }
-
-
-
-            }
-            // Card 5
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
-                Row {
-
-                    Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-
-                        Image(
-                            painter = painterResource(id = R.drawable.afrigas6kg),
-                            contentDescription ="home",
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
-
-                        Spacer(modifier = Modifier.height(20.dp))
-                    }
-                    Column (modifier = Modifier.padding(10.dp),
-                        horizontalAlignment = Alignment.Start){
-                        Text(
-                            text = "6Kg Afri gas ",
-                            modifier = Modifier.padding(top = 70.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-                        Text(
-                            text = "ksh 5000 ",
-                            modifier = Modifier.padding(top = 10.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-
-                    }
-                }
-
-
-
-            }
-
-        }
-        //Row2
-        Row(modifier = Modifier
-            .padding(20.dp)
-            .horizontalScroll(rememberScrollState())) {
-            //CARD 1
-
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
-
-                Row {
-                    Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-
-                        Image(
-                            painter = painterResource(id = R.drawable.total13kg),
+                            painter = painterResource(id = R.drawable.promini),
                             contentDescription ="home",
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.Crop
                         ) }
+
+
+                }
+                Column (
+                    modifier = Modifier.padding(10.dp),
+                    horizontalAlignment = Alignment.Start
+                ){
+                    Text(
+                        text = "6Kg sea gas ",
+                        modifier = Modifier.padding(top = 70.dp),
+                        fontFamily = FontFamily.Serif
+                    )
+
+                    Text(
+                        text = "ksh 4000 ",
+                        modifier = Modifier.padding(top = 10.dp),
+                        fontFamily = FontFamily.Serif
+                    )
+
+
                 }
             }
-            Column (
-                modifier = Modifier.padding(10.dp),
-                horizontalAlignment = Alignment.Start
-            ){
-                Text(
-                    text = "13Kg total gas ",
-                    modifier = Modifier.padding(top = 70.dp),
-                    fontFamily = FontFamily.Serif
-                )
-
-                Text(
-                    text = "ksh 8000 ",
-                    modifier = Modifier.padding(top = 10.dp),
-                    fontFamily = FontFamily.Serif
-                )
 
 
-            }
             Spacer(modifier = Modifier.width(40.dp))
             //card2
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
+            Row {
+                Card(
+                    modifier = Modifier
+                        .height(180.dp)
+                        .width(200.dp)
+                ) {
 
-                Row {
+
                     Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
                         Image(
-                            painter = painterResource(id = R.drawable.promini13kg),
+                            painter = painterResource(id = R.drawable.mpishimini),
                             contentDescription ="home",
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.Crop
                         )
 
-                        Spacer(modifier = Modifier.height(20.dp))
+
                     }
                     Column (  modifier = Modifier.padding(10.dp),
                         horizontalAlignment = Alignment.Start){
 
                         Text(
-                            text = "13Kg pro gas ",
+                            text = "6Kg mpishi gas ",
                             modifier = Modifier.padding(top = 70.dp),
                             fontFamily = FontFamily.Serif
                         )
 
                         Text(
-                            text = "ksh 7000 ",
+                            text = "ksh 4500 ",
                             modifier = Modifier.padding(top = 10.dp),
                             fontFamily = FontFamily.Serif
                         )
@@ -407,172 +215,401 @@ fun DetailsScreen(navController: NavController){
                     }
 
 
+
+
                 }
 
             }
+
             Spacer(modifier = Modifier.width(40.dp))
             //card 3
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
+           Row {
+               Card(
+                   modifier = Modifier
+                       .height(180.dp)
+                       .width(200.dp)
+               ) {
 
-                Row {
-                    Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
-                        Image(
-                            painter = painterResource(id = R.drawable.seagas13kg),
-                            contentDescription ="home",
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
+                   Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
-                        Spacer(modifier = Modifier.height(20.dp))
-                    }
-                    Column (modifier = Modifier.padding(10.dp),
-                        horizontalAlignment = Alignment.Start){
-                        Text(
-                            text = "Sea gas ",
-                            modifier = Modifier.padding(top = 70.dp),
-                            fontFamily = FontFamily.Serif
-                        )
+                       Image(
+                           painter = painterResource(id = R.drawable.kgasmini),
+                           contentDescription ="home",
+                           modifier = Modifier.fillMaxSize(),
+                           contentScale = ContentScale.Crop
+                       )
 
-                        Text(
-                            text = "ksh 6500 ",
-                            modifier = Modifier.padding(top = 10.dp),
-                            fontFamily = FontFamily.Serif
-                        )
 
-                    }
+                   }
+                   Column (modifier = Modifier.padding(10.dp),
+                       horizontalAlignment = Alignment.Start){
+                       Text(
+                           text = "6Kg Kgas gas ",
+                           modifier = Modifier.padding(top = 70.dp),
+                           fontFamily = FontFamily.Serif
+                       )
 
-                }
-            }
+                       Text(
+                           text = "ksh 4500 ",
+                           modifier = Modifier.padding(top = 10.dp),
+                           fontFamily = FontFamily.Serif
+                       )
+
+                   }
+
+
+               }
+           }
             Spacer(modifier = Modifier.width(40.dp))
             // Card 4
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
-                Row {
+           Row {
+               Card(
+                   modifier = Modifier
+                       .height(180.dp)
+                       .width(200.dp)
+               ) {
+                   Row {
 
-                    Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                       Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
-                        Image(
-                            painter = painterResource(id = R.drawable.rubis13kg),
-                            contentDescription ="home",
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
-
-                        Spacer(modifier = Modifier.height(20.dp))
-                    }
-                    Column (modifier = Modifier.padding(10.dp),
-                        horizontalAlignment = Alignment.Start){
-                        Text(
-                            text = "13Kg rubis gas ",
-                            modifier = Modifier.padding(top = 70.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-                        Text(
-                            text = "ksh 6500 ",
-                            modifier = Modifier.padding(top = 10.dp),
-                            fontFamily = FontFamily.Serif
-                        )
+                           Image(
+                               painter = painterResource(id = R.drawable.totalmini),
+                               contentDescription ="home",
+                               modifier = Modifier.fillMaxSize(),
+                               contentScale = ContentScale.Crop
+                           )
 
 
-                    }
-                }
+                       }
+                       Column (modifier = Modifier.padding(10.dp),
+                           horizontalAlignment = Alignment.Start){
+                           Text(
+                               text = "6Kg total gas ",
+                               modifier = Modifier.padding(top = 70.dp),
+                               fontFamily = FontFamily.Serif
+                           )
+
+                           Text(
+                               text = "ksh 4500 ",
+                               modifier = Modifier.padding(top = 10.dp),
+                               fontFamily = FontFamily.Serif
+                           )
 
 
-            }
+                       }
+                   }
+
+
+
+               }
+           }
+            Spacer(modifier = Modifier.width(40.dp))
             // Card 5
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
-                Row {
+         Row {
+             Card(
+                 modifier = Modifier
+                     .height(180.dp)
+                     .width(200.dp)
+             ) {
+                 Row {
 
-                    Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                     Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
-                        Image(
-                            painter = painterResource(id = R.drawable.mpishi13kg),
-                            contentDescription ="home",
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
-
-                        Spacer(modifier = Modifier.height(20.dp))
-                    }
-                    Column (modifier = Modifier.padding(10.dp),
-                        horizontalAlignment = Alignment.Start){
-                        Text(
-                            text = "13Kg mpishi gas ",
-                            modifier = Modifier.padding(top = 70.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-                        Text(
-                            text = "ksh 7000 ",
-                            modifier = Modifier.padding(top = 10.dp),
-                            fontFamily = FontFamily.Serif
-                        )
+                         Image(
+                             painter = painterResource(id = R.drawable.afrigas6kg),
+                             contentDescription ="home",
+                             modifier = Modifier.fillMaxSize(),
+                             contentScale = ContentScale.Crop
+                         )
 
 
-                    }
-                }
+                     }
+                     Column (modifier = Modifier.padding(10.dp),
+                         horizontalAlignment = Alignment.Start){
+                         Text(
+                             text = "6Kg Afri gas ",
+                             modifier = Modifier.padding(top = 70.dp),
+                             fontFamily = FontFamily.Serif
+                         )
+
+                         Text(
+                             text = "ksh 5000 ",
+                             modifier = Modifier.padding(top = 10.dp),
+                             fontFamily = FontFamily.Serif
+                         )
 
 
-            }
+                     }
+                 }
+
+
+
+             }
+         }
+
+        }
+        //Row2
+        Row(modifier = Modifier
+            .padding(30.dp)
+            .horizontalScroll(rememberScrollState())) {
+            //CARD 1
+
+           Row {
+               Card(
+                   modifier = Modifier
+                       .height(180.dp)
+                       .width(200.dp)
+               ) {
+
+
+                   Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+
+                       Image(
+                           painter = painterResource(id = R.drawable.total13kg),
+                           contentDescription ="home",
+                           modifier = Modifier.fillMaxSize(),
+                           contentScale = ContentScale.Crop
+                       ) }
+                   Column (
+                       modifier = Modifier.padding(10.dp),
+                       horizontalAlignment = Alignment.Start
+                   ){
+                       Text(
+                           text = "13Kg total gas ",
+                           modifier = Modifier.padding(top = 70.dp),
+                           fontFamily = FontFamily.Serif
+                       )
+
+                       Text(
+                           text = "ksh 8000 ",
+                           modifier = Modifier.padding(top = 10.dp),
+                           fontFamily = FontFamily.Serif
+                       )
+
+
+                   }
+
+               }
+           }
+
+            Spacer(modifier = Modifier.width(40.dp))
+            //card2
+           Row {
+               Card(
+                   modifier = Modifier
+                       .height(180.dp)
+                       .width(200.dp)
+               ) {
+
+
+                   Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+
+                       Image(
+                           painter = painterResource(id = R.drawable.promini13kg),
+                           contentDescription ="home",
+                           modifier = Modifier.fillMaxSize(),
+                           contentScale = ContentScale.Crop
+                       )
+
+
+
+                       Column (  modifier = Modifier.padding(10.dp),
+                           horizontalAlignment = Alignment.Start){
+
+                           Text(
+                               text = "13Kg pro gas ",
+                               modifier = Modifier.padding(top = 70.dp),
+                               fontFamily = FontFamily.Serif
+                           )
+
+                           Text(
+                               text = "ksh 7000 ",
+                               modifier = Modifier.padding(top = 10.dp),
+                               fontFamily = FontFamily.Serif
+                           )
+
+                       }
+
+
+                   }
+
+               }
+           }
+            Spacer(modifier = Modifier.width(40.dp))
+            //card 3
+         Row {
+             Card(
+                 modifier = Modifier
+                     .height(180.dp)
+                     .width(200.dp)
+             ) {
+
+
+                 Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+
+                     Image(
+                         painter = painterResource(id = R.drawable.seagas13kg),
+                         contentDescription ="home",
+                         modifier = Modifier.fillMaxSize(),
+                         contentScale = ContentScale.Crop
+                     )
+
+
+
+                     Column (modifier = Modifier.padding(10.dp),
+                         horizontalAlignment = Alignment.Start){
+                         Text(
+                             text = "Sea gas ",
+                             modifier = Modifier.padding(top = 70.dp),
+                             fontFamily = FontFamily.Serif
+                         )
+
+                         Text(
+                             text = "ksh 6500 ",
+                             modifier = Modifier.padding(top = 10.dp),
+                             fontFamily = FontFamily.Serif
+                         )
+
+                     }
+
+                 }
+             }
+         }
+            Spacer(modifier = Modifier.width(40.dp))
+            // Card 4
+           Row {
+               Card(
+                   modifier = Modifier
+                       .height(180.dp)
+                       .width(200.dp)
+               ) {
+
+
+                       Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+
+                           Image(
+                               painter = painterResource(id = R.drawable.rubis13kg),
+                               contentDescription ="home",
+                               modifier = Modifier.fillMaxSize(),
+                               contentScale = ContentScale.Crop
+                           )
+
+
+
+                       Column (modifier = Modifier.padding(10.dp),
+                           horizontalAlignment = Alignment.Start){
+                           Text(
+                               text = "13Kg rubis gas ",
+                               modifier = Modifier.padding(top = 70.dp),
+                               fontFamily = FontFamily.Serif
+                           )
+
+                           Text(
+                               text = "ksh 6500 ",
+                               modifier = Modifier.padding(top = 10.dp),
+                               fontFamily = FontFamily.Serif
+                           )
+
+
+                       }
+                   }
+
+
+               }
+           }
+            Spacer(modifier = Modifier.width(40.dp))
+            // Card 5
+           Row {
+               Card(
+                   modifier = Modifier
+                       .height(180.dp)
+                       .width(200.dp)
+               ) {
+
+
+                   Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+
+                       Image(
+                           painter = painterResource(id = R.drawable.mpishi13kg),
+                           contentDescription ="home",
+                           modifier = Modifier.fillMaxSize(),
+                           contentScale = ContentScale.Crop
+                       )
+
+
+                       Column (modifier = Modifier.padding(10.dp),
+                           horizontalAlignment = Alignment.Start){
+                           Text(
+                               text = "13Kg mpishi gas ",
+                               modifier = Modifier.padding(top = 70.dp),
+                               fontFamily = FontFamily.Serif
+                           )
+
+                           Text(
+                               text = "ksh 7000 ",
+                               modifier = Modifier.padding(top = 10.dp),
+                               fontFamily = FontFamily.Serif
+                           )
+
+
+                       }
+                   }
+
+
+               }
+           }
+            Spacer(modifier = Modifier.width(40.dp))
             // Card 6
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
-                Row {
-
-                    Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-
-                        Image(
-                            painter = painterResource(id = R.drawable.afrigas13kg),
-                            contentDescription ="home",
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
-
-                        Spacer(modifier = Modifier.height(20.dp))
-                    }
-                    Column (modifier = Modifier.padding(10.dp),
-                        horizontalAlignment = Alignment.Start){
-                        Text(
-                            text = "13Kg Afri gas ",
-                            modifier = Modifier.padding(top = 70.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-                        Text(
-                            text = "ksh 6000 ",
-                            modifier = Modifier.padding(top = 10.dp),
-                            fontFamily = FontFamily.Serif
-                        )
+           Row {
+               Card(
+                   modifier = Modifier
+                       .height(180.dp)
+                       .width(200.dp)
+               ) {
 
 
-                    }
-                }
+                   Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+
+                       Image(
+                           painter = painterResource(id = R.drawable.afrigas13kg),
+                           contentDescription ="home",
+                           modifier = Modifier.fillMaxSize(),
+                           contentScale = ContentScale.Crop
+                       )
 
 
-            }
+
+                       Column (modifier = Modifier.padding(10.dp),
+                           horizontalAlignment = Alignment.Start){
+                           Text(
+                               text = "13Kg Afri gas ",
+                               modifier = Modifier.padding(top = 70.dp),
+                               fontFamily = FontFamily.Serif
+                           )
+
+                           Text(
+                               text = "ksh 6000 ",
+                               modifier = Modifier.padding(top = 10.dp),
+                               fontFamily = FontFamily.Serif
+                           )
+
+
+                       }
+                   }
+
+
+               }
+           }
+            Spacer(modifier = Modifier.width(40.dp))
             // Card 7
-            Card(
-                modifier = Modifier
-                    .height(180.dp)
-                    .width(200.dp)
-            ) {
-                Row {
+            Row {
+                Card(
+                    modifier = Modifier
+                        .height(180.dp)
+                        .width(200.dp)
+                ) {
+
 
                     Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
@@ -583,27 +620,28 @@ fun DetailsScreen(navController: NavController){
                             contentScale = ContentScale.Crop
                         )
 
-                        Spacer(modifier = Modifier.height(20.dp))
+
+
+                        Column (modifier = Modifier.padding(10.dp),
+                            horizontalAlignment = Alignment.Start){
+                            Text(
+                                text = "13Kg Safe gas ",
+                                modifier = Modifier.padding(top = 70.dp),
+                                fontFamily = FontFamily.Serif
+                            )
+
+                            Text(
+                                text = "ksh 6500 ",
+                                modifier = Modifier.padding(top = 10.dp),
+                                fontFamily = FontFamily.Serif
+                            )
+
+
+                        }
                     }
-                    Column (modifier = Modifier.padding(10.dp),
-                        horizontalAlignment = Alignment.Start){
-                        Text(
-                            text = "13Kg Safe gas ",
-                            modifier = Modifier.padding(top = 70.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-                        Text(
-                            text = "ksh 6500 ",
-                            modifier = Modifier.padding(top = 10.dp),
-                            fontFamily = FontFamily.Serif
-                        )
 
 
-                    }
                 }
-
-
             }
 
 

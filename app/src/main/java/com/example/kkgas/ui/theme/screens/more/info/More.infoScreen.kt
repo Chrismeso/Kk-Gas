@@ -14,7 +14,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Edit
@@ -71,7 +73,9 @@ import com.example.kkgas.ui.theme.wondergreen
 @Composable
 
 fun MoreInfoScreen(navController: NavController){
-    Column (modifier = Modifier.fillMaxSize()){
+    Column (modifier = Modifier
+        .fillMaxSize()
+        .verticalScroll(rememberScrollState())){
         var selected by remember { mutableIntStateOf(0) }
         Scaffold(
             bottomBar = {
@@ -116,6 +120,7 @@ fun MoreInfoScreen(navController: NavController){
                         Text(text = "Kk Gas",
                         fontFamily = FontFamily.Serif) },
                     colors = TopAppBarDefaults.mediumTopAppBarColors(wondergreen)
+
                 )
             },
 
@@ -131,7 +136,9 @@ fun MoreInfoScreen(navController: NavController){
             //Content Section
             content = @Composable{
                 Column(
-                    modifier = Modifier.fillMaxSize().padding(top = 60.dp),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(top = 60.dp),
 
                 ){
 
@@ -150,8 +157,8 @@ fun MoreInfoScreen(navController: NavController){
                                     contentDescription ="home",
                                     modifier = Modifier
                                         .fillMaxSize()
-                                        .padding(top = 10.dp)
-                                        .padding(start = 10.dp),
+                                        .padding(top = 40.dp)
+                                        .padding(start = 15.dp),
                                     contentScale = ContentScale.Crop
                                 )
                                 Icon(imageVector = Icons.Default.Favorite, contentDescription = "favourite",
@@ -163,7 +170,7 @@ fun MoreInfoScreen(navController: NavController){
                             }
 
                         }
-                        Column (modifier = Modifier.padding(20.dp)){
+                        Column (modifier = Modifier.padding(30.dp)){
                             Text(
                                 text = "Get Kk Gas",
                                 fontSize = 25.sp
@@ -174,9 +181,9 @@ fun MoreInfoScreen(navController: NavController){
                                 Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
                                 Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
                                 Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
-                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
+
                             }
-                            Text(text = "The reliable LPG gas ypu can find")
+                            Text(text = "The reliable LPG gas you can find")
                             Text(text = "14,400 Reviews")
                             val mContext = LocalContext.current
                             Button(

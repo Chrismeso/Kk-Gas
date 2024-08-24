@@ -83,7 +83,7 @@ fun SignupScreen(navController: NavController){
         OutlinedTextField(
             value = name,
             onValueChange ={ name = it},
-            label = { Text(text = "Fullname :", fontWeight = FontWeight.Bold)},
+            label = { Text(text = "Fullname :", fontWeight = FontWeight.Bold, color = Color.White)},
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
@@ -95,7 +95,7 @@ fun SignupScreen(navController: NavController){
         OutlinedTextField(
             value = email,
             onValueChange ={ email = it},
-            label = { Text(text = "Email Address :", fontWeight = FontWeight.Bold)},
+            label = { Text(text = "Email Address :", fontWeight = FontWeight.Bold, color = Color.White)},
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
@@ -107,7 +107,7 @@ fun SignupScreen(navController: NavController){
         OutlinedTextField(
             value = password,
             onValueChange ={ password = it},
-            label = { Text(text = "Password :", fontWeight = FontWeight.Bold)},
+            label = { Text(text = "Password :", fontWeight = FontWeight.Bold, color = Color.White)},
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
@@ -120,7 +120,7 @@ fun SignupScreen(navController: NavController){
         OutlinedTextField(
             value = confpassword,
             onValueChange ={ confpassword = it},
-            label = { Text(text = "Confirm password :", fontWeight = FontWeight.Bold)},
+            label = { Text(text = "Confirm password :", fontWeight = FontWeight.Bold, color = Color.White)},
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
@@ -148,7 +148,7 @@ fun SignupScreen(navController: NavController){
             Text(text = "Sign up")
 
         }
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Button(
             onClick = {

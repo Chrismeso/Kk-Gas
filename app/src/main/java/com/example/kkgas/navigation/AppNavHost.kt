@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.propertyplusapp.ui.theme.screens.about.AboutScreen
+import com.example.kkgas.ui.theme.screens.about.AboutScreen
 import com.example.kkgas.ui.theme.screens.dashboard.DashboardScreen
 import com.example.kkgas.ui.theme.screens.details.DetailsScreen
 import com.example.kkgas.ui.theme.screens.home.HomeScreen
@@ -15,6 +15,7 @@ import com.example.kkgas.ui.theme.screens.signup.SignupScreen
 import com.example.kkgas.ui.theme.screens.splash.SplashScreen
 import com.example.kkgas.ui.theme.screens.gas.AddGasScreen
 import com.example.kkgas.ui.theme.screens.gas.ViewGasScreen
+import com.example.kkgas.ui.theme.screens.gas.ViewGasScreenBuyer
 import com.example.kkgas.ui.theme.screens.more.info.MoreInfoScreen
 
 @Composable
@@ -57,6 +58,9 @@ fun AppNavHost(
         }
         composable(ROUT_MOREINFO) {
             MoreInfoScreen(navController = navController)
+        }
+        composable(ROUT_VIEWGASBUYER) {
+            ViewGasScreenBuyer(navController = navController)
         }
 
     }

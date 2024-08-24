@@ -90,7 +90,7 @@ fun LoginScreen(navController: NavController){
         OutlinedTextField(
             value = email,
             onValueChange ={ email = it},
-            label = { Text(text = "Email Address :", fontWeight = FontWeight.Bold) },
+            label = { Text(text = "Email Address :", fontWeight = FontWeight.Bold, color = Color.White) },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
@@ -103,14 +103,14 @@ fun LoginScreen(navController: NavController){
         OutlinedTextField(
             value = password,
             onValueChange ={ password = it},
-            label = { Text(text = "Password :", fontWeight = FontWeight.Bold) },
+            label = { Text(text = "Password :", fontWeight = FontWeight.Bold, color = Color.White) },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp),
             leadingIcon = { Icon(imageVector = Icons.Default.Lock, contentDescription = "person", tint = lightgreen) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             visualTransformation = PasswordVisualTransformation(),
-            shape = RoundedCornerShape(20.dp)
+            shape = RoundedCornerShape(20.dp),
         )
         val context = LocalContext.current
         val authViewModel = AuthViewModel(navController, context)

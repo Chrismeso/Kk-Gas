@@ -35,6 +35,8 @@ import com.example.kkgas.R
 import com.example.kkgas.navigation.ROUT_ADDGAS
 import com.example.kkgas.navigation.ROUT_DETAILS
 import com.example.kkgas.navigation.ROUT_HOME
+import com.example.kkgas.navigation.ROUT_MOREINFO
+import com.example.kkgas.navigation.ROUT_VIEWGASBUYER
 import com.example.kkgas.ui.theme.lightblue
 
 @Composable
@@ -97,7 +99,7 @@ fun DashboardScreen(navController: NavController){
                             }
                             Spacer(modifier = Modifier.height(10.dp))
                             Text(
-                                text = "Details",
+                                text = "Details about Gas",
                                 fontSize = 18.sp,
                                 modifier = Modifier.fillMaxWidth(),
                                 textAlign = TextAlign.Center,
@@ -112,18 +114,18 @@ fun DashboardScreen(navController: NavController){
                     //Second card
                     Card(modifier = Modifier
                         .width(160.dp)
-                        .height(180.dp).clickable { navController.navigate(ROUT_ADDGAS) },elevation = CardDefaults.cardElevation(10.dp)) {
+                        .height(180.dp).clickable { navController.navigate(ROUT_VIEWGASBUYER) },elevation = CardDefaults.cardElevation(10.dp)) {
                         Column {
                             Spacer(modifier = Modifier.height(10.dp))
                             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.add) , contentDescription = "home" , modifier = Modifier.size(100.dp)
+                                    painter = painterResource(id = R.drawable.viewicon) , contentDescription = "home" , modifier = Modifier.size(100.dp)
                                 )
 
                             }
                             Spacer(modifier = Modifier.height(10.dp))
                             Text(
-                                text = "Add product",
+                                text = "View product",
                                 fontSize = 18.sp,
                                 modifier = Modifier.fillMaxWidth(),
                                 textAlign = TextAlign.Center,
@@ -143,19 +145,19 @@ fun DashboardScreen(navController: NavController){
                     Card(modifier = Modifier
                         .width(160.dp)
                         .height(180.dp)
-                        .clickable { navController.navigate(ROUT_DETAILS) },
+                        .clickable { navController.navigate(ROUT_MOREINFO) },
                         elevation = CardDefaults.cardElevation(10.dp)) {
                         Column {
                             Spacer(modifier = Modifier.height(10.dp))
                             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.details) , contentDescription = "home" , modifier = Modifier.size(100.dp)
+                                    painter = painterResource(id = R.drawable.moreinfo) , contentDescription = "home" , modifier = Modifier.size(100.dp)
                                 )
 
                             }
                             Spacer(modifier = Modifier.height(10.dp))
                             Text(
-                                text = "Details",
+                                text = "More info",
                                 fontSize = 18.sp,
                                 modifier = Modifier.fillMaxWidth(),
                                 textAlign = TextAlign.Center,
