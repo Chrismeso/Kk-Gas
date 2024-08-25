@@ -135,12 +135,12 @@ fun DetailsScreen(navController: NavController){
             .padding(20.dp)
             .horizontalScroll(rememberScrollState())) {
             //CARD 1
-            Row {
+            Row (modifier = Modifier.padding(20.dp)){
 
                 Card(
                     modifier = Modifier
-                        .height(180.dp)
-                        .width(200.dp)
+                        .height(160.dp)
+                        .width(180.dp)
                 ) {
 
 
@@ -151,38 +151,42 @@ fun DetailsScreen(navController: NavController){
                             contentDescription ="home",
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.Crop
-                        ) }
+                        )
+                        Column (
+                            modifier = Modifier.padding(10.dp),
+                            horizontalAlignment = Alignment.Start
+                        ){
+                            Text(
+                                text = "6Kg sea gas ",
+                                modifier = Modifier.padding(top = 90.dp, start = 100.dp),
+                                fontFamily = FontFamily.Serif
+                            )
 
+                            Text(
+                                text = "ksh 4000 ",
+                                modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                                fontFamily = FontFamily.Serif
+                            )
+
+
+                        }
+                    }
 
                 }
-                Column (
-                    modifier = Modifier.padding(10.dp),
-                    horizontalAlignment = Alignment.Start
-                ){
-                    Text(
-                        text = "6Kg sea gas ",
-                        modifier = Modifier.padding(top = 70.dp),
-                        fontFamily = FontFamily.Serif
-                    )
-
-                    Text(
-                        text = "ksh 4000 ",
-                        modifier = Modifier.padding(top = 10.dp),
-                        fontFamily = FontFamily.Serif
-                    )
 
 
-                }
+
+
             }
-
 
             Spacer(modifier = Modifier.width(40.dp))
             //card2
-            Row {
+            Row (modifier = Modifier.padding(20.dp)){
+
                 Card(
                     modifier = Modifier
-                        .height(180.dp)
-                        .width(200.dp)
+                        .height(160.dp)
+                        .width(180.dp)
                 ) {
 
 
@@ -194,25 +198,24 @@ fun DetailsScreen(navController: NavController){
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.Crop
                         )
+                        Column (  modifier = Modifier.padding(10.dp),
+                            horizontalAlignment = Alignment.Start){
 
+                            Text(
+                                text = "6Kg mpishi gas ",
+                                modifier = Modifier.padding(top = 90.dp, start = 100.dp),
+                                fontFamily = FontFamily.Serif
+                            )
 
+                            Text(
+                                text = "ksh 4500 ",
+                                modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                                fontFamily = FontFamily.Serif
+                            )
+
+                        }
                     }
-                    Column (  modifier = Modifier.padding(10.dp),
-                        horizontalAlignment = Alignment.Start){
 
-                        Text(
-                            text = "6Kg mpishi gas ",
-                            modifier = Modifier.padding(top = 70.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-                        Text(
-                            text = "ksh 4500 ",
-                            modifier = Modifier.padding(top = 10.dp),
-                            fontFamily = FontFamily.Serif
-                        )
-
-                    }
 
 
 
@@ -223,11 +226,11 @@ fun DetailsScreen(navController: NavController){
 
             Spacer(modifier = Modifier.width(40.dp))
             //card 3
-           Row {
+           Row (modifier = Modifier.padding(20.dp)){
                Card(
                    modifier = Modifier
-                       .height(180.dp)
-                       .width(200.dp)
+                       .height(160.dp)
+                       .width(180.dp)
                ) {
 
 
@@ -239,37 +242,36 @@ fun DetailsScreen(navController: NavController){
                            modifier = Modifier.fillMaxSize(),
                            contentScale = ContentScale.Crop
                        )
+                       Column (modifier = Modifier.padding(10.dp),
+                           horizontalAlignment = Alignment.Start){
+                           Text(
+                               text = "6Kg Kgas gas ",
+                               modifier = Modifier.padding(top = 90.dp, start = 100.dp),
+                               fontFamily = FontFamily.Serif
+                           )
 
+                           Text(
+                               text = "ksh 4500 ",
+                               modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                               fontFamily = FontFamily.Serif
+                           )
 
+                       }
                    }
-                   Column (modifier = Modifier.padding(10.dp),
-                       horizontalAlignment = Alignment.Start){
-                       Text(
-                           text = "6Kg Kgas gas ",
-                           modifier = Modifier.padding(top = 70.dp),
-                           fontFamily = FontFamily.Serif
-                       )
 
-                       Text(
-                           text = "ksh 4500 ",
-                           modifier = Modifier.padding(top = 10.dp),
-                           fontFamily = FontFamily.Serif
-                       )
-
-                   }
 
 
                }
            }
             Spacer(modifier = Modifier.width(40.dp))
             // Card 4
-           Row {
+           Row(modifier = Modifier.padding(20.dp)) {
                Card(
                    modifier = Modifier
-                       .height(180.dp)
-                       .width(200.dp)
+                       .height(160.dp)
+                       .width(180.dp)
                ) {
-                   Row {
+
 
                        Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
@@ -279,26 +281,25 @@ fun DetailsScreen(navController: NavController){
                                modifier = Modifier.fillMaxSize(),
                                contentScale = ContentScale.Crop
                            )
+                           Column (modifier = Modifier.padding(10.dp),
+                               horizontalAlignment = Alignment.Start){
+                               Text(
+                                   text = "6Kg total gas ",
+                                   modifier = Modifier.padding(top = 90.dp, start = 100.dp),
+                                   fontFamily = FontFamily.Serif
+                               )
+
+                               Text(
+                                   text = "ksh 4500 ",
+                                   modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                                   fontFamily = FontFamily.Serif
+                               )
 
 
+                           }
                        }
-                       Column (modifier = Modifier.padding(10.dp),
-                           horizontalAlignment = Alignment.Start){
-                           Text(
-                               text = "6Kg total gas ",
-                               modifier = Modifier.padding(top = 70.dp),
-                               fontFamily = FontFamily.Serif
-                           )
-
-                           Text(
-                               text = "ksh 4500 ",
-                               modifier = Modifier.padding(top = 10.dp),
-                               fontFamily = FontFamily.Serif
-                           )
 
 
-                       }
-                   }
 
 
 
@@ -306,13 +307,13 @@ fun DetailsScreen(navController: NavController){
            }
             Spacer(modifier = Modifier.width(40.dp))
             // Card 5
-         Row {
+         Row (modifier = Modifier.padding(20.dp)){
              Card(
                  modifier = Modifier
-                     .height(180.dp)
-                     .width(200.dp)
+                     .height(160.dp)
+                     .width(180.dp)
              ) {
-                 Row {
+
 
                      Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
@@ -322,26 +323,25 @@ fun DetailsScreen(navController: NavController){
                              modifier = Modifier.fillMaxSize(),
                              contentScale = ContentScale.Crop
                          )
+                         Column (modifier = Modifier.padding(10.dp),
+                             horizontalAlignment = Alignment.Start){
+                             Text(
+                                 text = "6Kg Afri gas ",
+                                 modifier = Modifier.padding(top = 90.dp, start = 100.dp),
+                                 fontFamily = FontFamily.Serif
+                             )
+
+                             Text(
+                                 text = "ksh 5000 ",
+                                 modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                                 fontFamily = FontFamily.Serif
+                             )
 
 
+
+                         }
                      }
-                     Column (modifier = Modifier.padding(10.dp),
-                         horizontalAlignment = Alignment.Start){
-                         Text(
-                             text = "6Kg Afri gas ",
-                             modifier = Modifier.padding(top = 70.dp),
-                             fontFamily = FontFamily.Serif
-                         )
 
-                         Text(
-                             text = "ksh 5000 ",
-                             modifier = Modifier.padding(top = 10.dp),
-                             fontFamily = FontFamily.Serif
-                         )
-
-
-                     }
-                 }
 
 
 
@@ -351,15 +351,16 @@ fun DetailsScreen(navController: NavController){
         }
         //Row2
         Row(modifier = Modifier
-            .padding(30.dp)
+            .padding(40.dp)
             .horizontalScroll(rememberScrollState())) {
             //CARD 1
 
-           Row {
+           Row(modifier = Modifier.padding(20.dp)) {
+
                Card(
                    modifier = Modifier
-                       .height(180.dp)
-                       .width(200.dp)
+                       .height(160.dp)
+                       .width(180.dp)
                ) {
 
 
@@ -370,36 +371,39 @@ fun DetailsScreen(navController: NavController){
                            contentDescription ="home",
                            modifier = Modifier.fillMaxSize(),
                            contentScale = ContentScale.Crop
-                       ) }
-                   Column (
-                       modifier = Modifier.padding(10.dp),
-                       horizontalAlignment = Alignment.Start
-                   ){
-                       Text(
-                           text = "13Kg total gas ",
-                           modifier = Modifier.padding(top = 70.dp),
-                           fontFamily = FontFamily.Serif
                        )
+                       Spacer(modifier = Modifier.width(40.dp))
+                       Column (
+                           modifier = Modifier.padding(10.dp),
+                           horizontalAlignment = Alignment.Start
+                       ){
+                           Text(
+                               text = "13Kg total gas ",
+                               modifier = Modifier.padding(top = 50.dp, start = 100.dp),
+                               fontFamily = FontFamily.Serif
+                           )
 
-                       Text(
-                           text = "ksh 8000 ",
-                           modifier = Modifier.padding(top = 10.dp),
-                           fontFamily = FontFamily.Serif
-                       )
+                           Text(
+                               text = "ksh 8000 ",
+                               modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                               fontFamily = FontFamily.Serif
+                           )
 
 
+                       }
                    }
+
 
                }
            }
 
             Spacer(modifier = Modifier.width(40.dp))
             //card2
-           Row {
+           Row (modifier = Modifier.padding(20.dp)){
                Card(
                    modifier = Modifier
-                       .height(180.dp)
-                       .width(200.dp)
+                       .height(160.dp)
+                       .width(180.dp)
                ) {
 
 
@@ -411,6 +415,8 @@ fun DetailsScreen(navController: NavController){
                            modifier = Modifier.fillMaxSize(),
                            contentScale = ContentScale.Crop
                        )
+                       }
+
 
 
 
@@ -419,26 +425,26 @@ fun DetailsScreen(navController: NavController){
 
                            Text(
                                text = "13Kg pro gas ",
-                               modifier = Modifier.padding(top = 70.dp),
+                               modifier = Modifier.padding(top = 90.dp, start = 20.dp),
                                fontFamily = FontFamily.Serif
                            )
 
                            Text(
                                text = "ksh 7000 ",
-                               modifier = Modifier.padding(top = 10.dp),
+                               modifier = Modifier.padding(top = 30.dp, start = 20.dp),
                                fontFamily = FontFamily.Serif
                            )
 
                        }
 
 
-                   }
+
 
                }
            }
             Spacer(modifier = Modifier.width(40.dp))
             //card 3
-         Row {
+         Row (modifier = Modifier.padding(20.dp)){
              Card(
                  modifier = Modifier
                      .height(180.dp)
@@ -461,13 +467,13 @@ fun DetailsScreen(navController: NavController){
                          horizontalAlignment = Alignment.Start){
                          Text(
                              text = "Sea gas ",
-                             modifier = Modifier.padding(top = 70.dp),
+                             modifier = Modifier.padding(top = 90.dp, start = 20.dp),
                              fontFamily = FontFamily.Serif
                          )
 
                          Text(
                              text = "ksh 6500 ",
-                             modifier = Modifier.padding(top = 10.dp),
+                             modifier = Modifier.padding(top = 30.dp, start = 20.dp),
                              fontFamily = FontFamily.Serif
                          )
 
@@ -478,7 +484,7 @@ fun DetailsScreen(navController: NavController){
          }
             Spacer(modifier = Modifier.width(40.dp))
             // Card 4
-           Row {
+           Row (modifier = Modifier.padding(20.dp)){
                Card(
                    modifier = Modifier
                        .height(180.dp)
@@ -501,13 +507,13 @@ fun DetailsScreen(navController: NavController){
                            horizontalAlignment = Alignment.Start){
                            Text(
                                text = "13Kg rubis gas ",
-                               modifier = Modifier.padding(top = 70.dp),
+                               modifier = Modifier.padding(top = 90.dp, start = 40.dp),
                                fontFamily = FontFamily.Serif
                            )
 
                            Text(
                                text = "ksh 6500 ",
-                               modifier = Modifier.padding(top = 10.dp),
+                               modifier = Modifier.padding(top = 30.dp, start = 40.dp),
                                fontFamily = FontFamily.Serif
                            )
 
@@ -520,11 +526,11 @@ fun DetailsScreen(navController: NavController){
            }
             Spacer(modifier = Modifier.width(40.dp))
             // Card 5
-           Row {
+           Row (modifier = Modifier.padding(20.dp)){
                Card(
                    modifier = Modifier
-                       .height(180.dp)
-                       .width(200.dp)
+                       .height(160.dp)
+                       .width(180.dp)
                ) {
 
 
@@ -542,13 +548,13 @@ fun DetailsScreen(navController: NavController){
                            horizontalAlignment = Alignment.Start){
                            Text(
                                text = "13Kg mpishi gas ",
-                               modifier = Modifier.padding(top = 70.dp),
+                               modifier = Modifier.padding(top = 90.dp, start = 40.dp),
                                fontFamily = FontFamily.Serif
                            )
 
                            Text(
                                text = "ksh 7000 ",
-                               modifier = Modifier.padding(top = 10.dp),
+                               modifier = Modifier.padding(top = 30.dp, start = 40.dp),
                                fontFamily = FontFamily.Serif
                            )
 
@@ -561,11 +567,11 @@ fun DetailsScreen(navController: NavController){
            }
             Spacer(modifier = Modifier.width(40.dp))
             // Card 6
-           Row {
+           Row(modifier = Modifier.padding(20.dp)) {
                Card(
                    modifier = Modifier
-                       .height(180.dp)
-                       .width(200.dp)
+                       .height(160.dp)
+                       .width(180.dp)
                ) {
 
 
@@ -584,13 +590,13 @@ fun DetailsScreen(navController: NavController){
                            horizontalAlignment = Alignment.Start){
                            Text(
                                text = "13Kg Afri gas ",
-                               modifier = Modifier.padding(top = 70.dp),
+                               modifier = Modifier.padding(top = 90.dp, start = 40.dp),
                                fontFamily = FontFamily.Serif
                            )
 
                            Text(
                                text = "ksh 6000 ",
-                               modifier = Modifier.padding(top = 10.dp),
+                               modifier = Modifier.padding(top = 30.dp, start = 40.dp),
                                fontFamily = FontFamily.Serif
                            )
 
@@ -603,11 +609,11 @@ fun DetailsScreen(navController: NavController){
            }
             Spacer(modifier = Modifier.width(40.dp))
             // Card 7
-            Row {
+            Row (modifier = Modifier.padding(20.dp)){
                 Card(
                     modifier = Modifier
-                        .height(180.dp)
-                        .width(200.dp)
+                        .height(160.dp)
+                        .width(180.dp)
                 ) {
 
 
@@ -626,13 +632,13 @@ fun DetailsScreen(navController: NavController){
                             horizontalAlignment = Alignment.Start){
                             Text(
                                 text = "13Kg Safe gas ",
-                                modifier = Modifier.padding(top = 70.dp),
+                                modifier = Modifier.padding(top = 90.dp, start = 40.dp),
                                 fontFamily = FontFamily.Serif
                             )
 
                             Text(
                                 text = "ksh 6500 ",
-                                modifier = Modifier.padding(top = 10.dp),
+                                modifier = Modifier.padding(top = 30.dp, start = 40.dp),
                                 fontFamily = FontFamily.Serif
                             )
 
@@ -644,13 +650,8 @@ fun DetailsScreen(navController: NavController){
                 }
             }
 
-
-
-
         }
-
-
-
+        Spacer(modifier = Modifier.height(20.dp))
 
         Button(
             onClick = { navController.navigate(ROUT_MOREINFO) },

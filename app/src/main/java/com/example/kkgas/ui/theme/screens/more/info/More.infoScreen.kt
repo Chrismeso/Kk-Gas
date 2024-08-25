@@ -24,11 +24,13 @@ import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material.icons.outlined.Face
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.Button
@@ -57,6 +59,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -116,11 +119,8 @@ fun MoreInfoScreen(navController: NavController){
             },
             topBar = {
                 TopAppBar(
-                    title = {
-                        Text(text = "Kk Gas",
-                        fontFamily = FontFamily.Serif) },
-                    colors = TopAppBarDefaults.mediumTopAppBarColors(wondergreen)
-
+                    title = { Text(text = "Kk Gas") },
+                    colors = TopAppBarDefaults.mediumTopAppBarColors(lightgreen)
                 )
             },
 
@@ -140,7 +140,7 @@ fun MoreInfoScreen(navController: NavController){
                         .fillMaxSize()
                         .padding(top = 60.dp),
 
-                ){
+                    ){
 
                     //Row 1
                     Row {
@@ -157,38 +157,46 @@ fun MoreInfoScreen(navController: NavController){
                                     contentDescription ="home",
                                     modifier = Modifier
                                         .fillMaxSize()
-                                        .padding(top = 40.dp)
-                                        .padding(start = 15.dp),
+                                        .padding(top = 30.dp)
+                                        .padding(start = 10.dp),
                                     contentScale = ContentScale.Crop
                                 )
                                 Icon(imageVector = Icons.Default.Favorite, contentDescription = "favourite",
                                     modifier = Modifier
                                         .align(Alignment.TopStart)
-                                        .padding(10.dp))
+                                        .padding(2.dp),
+                                    tint = lightgreen
+                                    )
+
 
 
                             }
 
                         }
-                        Column (modifier = Modifier.padding(30.dp)){
+                        Column (modifier = Modifier.padding(20.dp)){
                             Text(
                                 text = "Get Kk Gas",
                                 fontSize = 25.sp
 
                             )
                             Row {
-                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
-                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
-                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
-                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Green, modifier = Modifier.size(30.dp))
-
+                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = lightgreen, modifier = Modifier.size(30.dp))
+                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = lightgreen, modifier = Modifier.size(30.dp))
+                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = lightgreen, modifier = Modifier.size(30.dp))
+                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = lightgreen, modifier = Modifier.size(30.dp))
+                                Icon(imageVector = Icons.Default.Star, contentDescription = "star", tint = lightgreen, modifier = Modifier.size(30.dp))
                             }
-                            Text(text = "The reliable LPG gas you can find")
-                            Text(text = "14,400 Reviews")
+                            Text(
+                                text = "The reliable lpg gas you can find",
+                                fontFamily = FontFamily.Serif
+                                )
+                            Text(
+                                text = "14,400 Reviews",
+                                fontFamily = FontFamily.Serif
+                            )
                             val mContext = LocalContext.current
                             Button(
-                                onClick = {
-                                    val callIntent= Intent(Intent.ACTION_DIAL)
+                                onClick = {val callIntent= Intent(Intent.ACTION_DIAL)
                                     callIntent.data="tel:0112577059".toUri()
                                     mContext.startActivity(callIntent)
                                 },
@@ -228,7 +236,7 @@ fun MoreInfoScreen(navController: NavController){
                     Button(
                         onClick = {  val smsIntent= Intent(Intent.ACTION_SENDTO)
                             smsIntent.data="smsto:0112577059".toUri()
-                            smsIntent.putExtra("sms_body","Hello ,how was your day and how may help you?")
+                            smsIntent.putExtra("sms_body","Hello ,how was your day?")
                             mContext.startActivity(smsIntent) },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -246,9 +254,9 @@ fun MoreInfoScreen(navController: NavController){
                     Button(
                         onClick = {  val shareIntent = Intent(Intent.ACTION_SEND)
                             shareIntent.type = "text/plain"
-                            shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("chrismwikamaba745@gmail.com"))
+                            shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("chrismwikamba745@gmail.com"))
                             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject")
-                            shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is the our email body")
+                            shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is the email body")
                             mContext.startActivity(shareIntent)},
                         modifier = Modifier
                             .fillMaxWidth()
@@ -261,18 +269,13 @@ fun MoreInfoScreen(navController: NavController){
                         Text(text = "Email")
 
                     }
-                    Spacer(modifier = Modifier.height(10.dp))
+                    Spacer(modifier = Modifier.height(20.dp))
                     Text(
-                        text = "We deliver anywhere anytime and cut the competition",
-                        fontSize = 25.sp,
-                        fontFamily = FontFamily.Cursive,
-                        color = Color.Black
-
-
-
-                    )
-
-
+                        text = "We are looking forward to work with you thank you for choosing Kk Gas",
+                        fontSize = 30.sp,
+                        textAlign = TextAlign.Center,
+                        fontFamily = FontFamily.Cursive
+                        )
 
 
                 }
@@ -280,6 +283,7 @@ fun MoreInfoScreen(navController: NavController){
             }
 
         )
+
 
 
     }
@@ -307,15 +311,15 @@ val bottomNavItems = listOf(
         badges=5
     ),
 
+
     BottomNavItem(
-        title = "About",
-        route="about",
-        selectedIcon=Icons.Filled.Edit,
-        unselectedIcon=Icons.Outlined.Edit,
+        title = "Dashboard",
+        route="dashboard",
+        selectedIcon=Icons.Filled.Menu,
+        unselectedIcon=Icons.Outlined.Menu,
         hasNews = true,
         badges=1
     ),
-
 
 
     )
@@ -338,8 +342,8 @@ data class BottomNavItem(
 
 @Composable
 @Preview(showBackground = true)
-fun MoreInfoPreview(){
-    MoreInfoScreen(rememberNavController())
+fun MoreInfoScreenPreview(){
+    MoreInfoScreen(navController = rememberNavController())
 
 
 }
