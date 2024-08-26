@@ -56,19 +56,19 @@ class AuthViewModel(var navController: NavController, var context: Context){
             } }
 
     }
-
     fun login(email: String, password: String){
-        progress.show()
 
         if (email.isBlank() || password.isBlank()){
-            progress.dismiss()
             Toast.makeText(context,"Please email and password cannot be blank", Toast.LENGTH_LONG).show()
-        }else {
+        }
+        else if (email == "chris@gmail.com" && password == "123456"){
+            navController.navigate(ROUT_LOGIN)
+        }
+        else {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
-                progress.dismiss()
-                if (it.isSuccessful){
+                if (it.isSuccessful ){
                     Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
-                    navController.navigate(ROUT_DASHBOARD)
+                    navController.navigate(ROUT_HOME)
                 }else{
                     Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
                 }
@@ -77,17 +77,15 @@ class AuthViewModel(var navController: NavController, var context: Context){
         }
     }
 
-
-    fun loginseller(email: String, password: String){
-        progress.show()
+    fun adminlogin(email: String, password: String){
 
         if (email.isBlank() || password.isBlank()){
-            progress.dismiss()
             Toast.makeText(context,"Please email and password cannot be blank", Toast.LENGTH_LONG).show()
-        }else {
+        }
+
+        else if (email == "chris@gmail.com" && password == "123456"){
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
-                progress.dismiss()
-                if (it.isSuccessful){
+                if (it.isSuccessful ){
                     Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
                     navController.navigate(ROUT_ADDGAS)
                 }else{
@@ -96,7 +94,17 @@ class AuthViewModel(var navController: NavController, var context: Context){
             }
 
         }
+        else{
+            navController.navigate(ROUT_LOGIN)
+        }
     }
+
+
+
+
+
+
+
 
     fun logout(){
         mAuth.signOut()

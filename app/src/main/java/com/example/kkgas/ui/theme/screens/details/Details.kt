@@ -140,37 +140,40 @@ fun DetailsScreen(navController: NavController){
                 Card(
                     modifier = Modifier
                         .height(160.dp)
-                        .width(180.dp)
+                        .width(150.dp)
                 ) {
 
 
-                    Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
 
                         Image(
                             painter = painterResource(id = R.drawable.promini),
-                            contentDescription ="home",
+                            contentDescription = "home",
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.Crop
                         )
+                    }
+                }
+
                         Column (
-                            modifier = Modifier.padding(10.dp),
-                            horizontalAlignment = Alignment.Start
+                            modifier = Modifier.padding(10.dp)
                         ){
                             Text(
                                 text = "6Kg sea gas ",
-                                modifier = Modifier.padding(top = 90.dp, start = 100.dp),
+                                modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                                 fontFamily = FontFamily.Serif
                             )
 
                             Text(
                                 text = "ksh 4000 ",
-                                modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                                modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                                 fontFamily = FontFamily.Serif
                             )
 
 
-                        }
-                    }
+
+
+
 
                 }
 
@@ -179,43 +182,41 @@ fun DetailsScreen(navController: NavController){
 
             }
 
-            Spacer(modifier = Modifier.width(40.dp))
+            Spacer(modifier = Modifier.width(10.dp))
             //card2
             Row (modifier = Modifier.padding(20.dp)){
 
                 Card(
                     modifier = Modifier
                         .height(160.dp)
-                        .width(180.dp)
+                        .width(150.dp)
                 ) {
 
 
-                    Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
 
                         Image(
                             painter = painterResource(id = R.drawable.mpishimini),
-                            contentDescription ="home",
+                            contentDescription = "home",
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.Crop
                         )
+                    }
+                }
                         Column (  modifier = Modifier.padding(10.dp),
                             horizontalAlignment = Alignment.Start){
 
                             Text(
                                 text = "6Kg mpishi gas ",
-                                modifier = Modifier.padding(top = 90.dp, start = 100.dp),
+                                modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                                 fontFamily = FontFamily.Serif
                             )
 
                             Text(
                                 text = "ksh 4500 ",
-                                modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                                modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                                 fontFamily = FontFamily.Serif
                             )
-
-                        }
-                    }
-
 
 
 
@@ -364,14 +365,16 @@ fun DetailsScreen(navController: NavController){
                ) {
 
 
-                   Box (modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                   Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
 
                        Image(
                            painter = painterResource(id = R.drawable.total13kg),
-                           contentDescription ="home",
+                           contentDescription = "home",
                            modifier = Modifier.fillMaxSize(),
                            contentScale = ContentScale.Crop
                        )
+                   }
+               }
                        Spacer(modifier = Modifier.width(40.dp))
                        Column (
                            modifier = Modifier.padding(10.dp),
@@ -388,10 +391,6 @@ fun DetailsScreen(navController: NavController){
                                modifier = Modifier.padding(top = 10.dp, start = 100.dp),
                                fontFamily = FontFamily.Serif
                            )
-
-
-                       }
-                   }
 
 
                }

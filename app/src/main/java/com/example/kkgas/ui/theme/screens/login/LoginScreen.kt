@@ -141,7 +141,7 @@ fun LoginScreen(navController: NavController){
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(
-            onClick = { authViewModel.loginseller(email, password) },
+            onClick = { authViewModel.adminlogin(email, password) },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp)
@@ -149,7 +149,7 @@ fun LoginScreen(navController: NavController){
             colors = ButtonDefaults.buttonColors(lightgreen),
             shape = RoundedCornerShape(10.dp)
         ) {
-            Text(text = "Login as seller")
+            Text(text = "Login as an admin")
 
         }
 
