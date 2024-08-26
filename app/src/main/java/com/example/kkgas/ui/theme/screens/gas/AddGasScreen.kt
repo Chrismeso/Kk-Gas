@@ -272,7 +272,7 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context, navController: 
 
     val imagePicker = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent(),
-        onResult = { uri ->
+        onResult = { uri: Uri? ->
             hasImage = uri != null
             imageUri = uri
         }
