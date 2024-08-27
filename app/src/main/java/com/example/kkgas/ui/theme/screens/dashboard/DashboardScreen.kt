@@ -34,7 +34,6 @@ import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
 import com.example.kkgas.navigation.ROUT_ADDGAS
 import com.example.kkgas.navigation.ROUT_DETAILS
-import com.example.kkgas.navigation.ROUT_HOME
 import com.example.kkgas.navigation.ROUT_MOREINFO
 import com.example.kkgas.navigation.ROUT_VIEWGASBUYER
 import com.example.kkgas.ui.theme.lightblue
