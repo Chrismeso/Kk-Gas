@@ -13,8 +13,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -26,6 +28,7 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -41,11 +44,13 @@ import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -60,30 +65,50 @@ import com.example.kkgas.navigation.ROUT_BOOKGAS
 import com.example.kkgas.navigation.ROUT_DETAILS
 import com.example.kkgas.navigation.ROUT_MOREINFO
 import com.example.kkgas.navigation.ROUT_VIEWGASBUYER
-
+import com.example.kkgas.ui.theme.home
+import kotlinx.coroutines.launch
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navController:NavController) {
-    Column {
+    Column (modifier = Modifier.fillMaxSize()
+        .background(home),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center) {
         //Main Content of the screen
-        Image(
-            painter = painterResource(id = R.drawable.gashome),
-            contentDescription = "home",
+        Spacer(modifier = Modifier.height(30.dp))
+        Card(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(top = 30.dp)
-                .padding(start = 10.dp),
-            contentScale = ContentScale.Crop
-        )
+                .height(180.dp)
+                .width(200.dp)
+                .clip(shape = CircleShape)
+                .size(600.dp)
 
+        ) {
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                Image(
+                    painter = painterResource(id = R.drawable.gashome),
+                    contentDescription = "home",
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(top = 30.dp)
+                        .padding(start = 10.dp)
+                        .size(250.dp),
+                    contentScale = ContentScale.Crop
+                )
+            }
+        }
+
+
+        Spacer(modifier = Modifier.height(30.dp))
 
         Text(
             text = "Welcome to Kk Gas",
-            fontSize = 30.sp,
-            fontFamily = FontFamily.SansSerif
+            fontSize = 40.sp,
+            fontFamily = FontFamily.Cursive
+
 
         )
         Spacer(modifier = Modifier.height(30.dp))
@@ -100,14 +125,11 @@ fun HomeScreen(navController:NavController) {
         Spacer(modifier = Modifier.height(10.dp))
 
         Text(
-            text = "With managable costs delivery anytime anywhere",
-            fontSize = 25.sp
+            text = "With managable costs and delivery anytime anywhere",
+            fontSize = 25.sp,
+            modifier = Modifier.padding(30.dp)
         )
-        Text(
-            text = " Delivery anytime anywhere",
-            fontSize = 25.sp
 
-        )
 
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -117,7 +139,8 @@ fun HomeScreen(navController:NavController) {
         Button(
             onClick = { navController.navigate(ROUT_MOREINFO) },
             shape = RoundedCornerShape(topStart = 10.dp, bottomStart = 10.dp),
-            colors = ButtonDefaults.buttonColors(Color.Black)
+            colors = ButtonDefaults.buttonColors(Color.Black),
+            modifier = Modifier.padding(end = 200.dp)
         ) {
             Text(text = "Ask about us")
         }
@@ -129,7 +152,8 @@ fun HomeScreen(navController:NavController) {
         Button(
             onClick = { navController.navigate(ROUT_VIEWGASBUYER) },
             shape = RoundedCornerShape(topStart = 10.dp, bottomStart = 10.dp),
-            colors = ButtonDefaults.buttonColors(Color.Black)
+            colors = ButtonDefaults.buttonColors(Color.Black),
+            modifier = Modifier.padding(end = 100.dp)
         ) {
             Text(text = "View our stock")
         }
@@ -143,7 +167,8 @@ fun HomeScreen(navController:NavController) {
         Button(
             onClick = { navController.navigate(ROUT_DETAILS) },
             shape = RoundedCornerShape(topStart = 10.dp, bottomStart = 10.dp),
-            colors = ButtonDefaults.buttonColors(Color.Black)
+            colors = ButtonDefaults.buttonColors(Color.Black),
+            modifier = Modifier.padding(start = 90.dp)
         ) {
             Text(text = "Choose our gas")
         }
@@ -155,10 +180,13 @@ fun HomeScreen(navController:NavController) {
         Button(
             onClick = { navController.navigate(ROUT_BOOKGAS) },
             shape = RoundedCornerShape(topStart = 10.dp, bottomStart = 10.dp),
-            colors = ButtonDefaults.buttonColors(Color.Black)
+            colors = ButtonDefaults.buttonColors(Color.Black),
+            modifier = Modifier.padding(start = 200.dp)
         ) {
             Text(text = "Book your gas")
         }
+
+
 
 
     }
