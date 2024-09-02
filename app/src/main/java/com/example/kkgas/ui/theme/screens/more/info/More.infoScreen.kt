@@ -2,7 +2,6 @@ package com.example.kkgas.ui.theme.screens.more.info
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.provider.MediaStore
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,15 +18,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.outlined.Edit
-import androidx.compose.material.icons.outlined.Face
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Menu
@@ -53,7 +48,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -68,17 +62,13 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
 import com.example.kkgas.ui.theme.lightgreen
-import com.example.kkgas.ui.theme.lightgreen
-import com.example.kkgas.ui.theme.wondergreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 
 fun MoreInfoScreen(navController: NavController){
-    Column (modifier = Modifier
-        .fillMaxSize()
-        .verticalScroll(rememberScrollState())){
+
         var selected by remember { mutableIntStateOf(0) }
         Scaffold(
             bottomBar = {
@@ -286,7 +276,7 @@ fun MoreInfoScreen(navController: NavController){
 
 
 
-    }
+
 
 }
 

@@ -33,6 +33,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
 import com.example.kkgas.navigation.ROUT_ADDGAS
+import com.example.kkgas.navigation.ROUT_BOOKGAS
 import com.example.kkgas.navigation.ROUT_DETAILS
 import com.example.kkgas.navigation.ROUT_MOREINFO
 import com.example.kkgas.navigation.ROUT_VIEWGASBUYER
@@ -171,18 +172,18 @@ fun DashboardScreen(navController: NavController){
                     //Second card
                     Card(modifier = Modifier
                         .width(160.dp)
-                        .height(180.dp).clickable { navController.navigate(ROUT_ADDGAS) },elevation = CardDefaults.cardElevation(10.dp)) {
+                        .height(180.dp).clickable { navController.navigate(ROUT_BOOKGAS) },elevation = CardDefaults.cardElevation(10.dp)) {
                         Column {
                             Spacer(modifier = Modifier.height(10.dp))
                             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.add) , contentDescription = "home" , modifier = Modifier.size(100.dp)
+                                    painter = painterResource(id = R.drawable.bookingicon) , contentDescription = "home" , modifier = Modifier.size(100.dp)
                                 )
 
                             }
                             Spacer(modifier = Modifier.height(10.dp))
                             Text(
-                                text = "Add product",
+                                text = "Book your gas",
                                 fontSize = 18.sp,
                                 modifier = Modifier.fillMaxWidth(),
                                 textAlign = TextAlign.Center,

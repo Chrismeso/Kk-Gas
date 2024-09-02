@@ -7,6 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.ui.theme.screens.about.AboutScreen
+import com.example.kkgas.ui.theme.screens.book.BookGasScreen
+import com.example.kkgas.ui.theme.screens.book.ViewBookedGascreen
 import com.example.kkgas.ui.theme.screens.dashboard.DashboardScreen
 import com.example.kkgas.ui.theme.screens.details.DetailsScreen
 import com.example.kkgas.ui.theme.screens.home.HomeScreen
@@ -61,6 +63,12 @@ fun AppNavHost(
         }
         composable(ROUT_VIEWGASBUYER) {
             ViewGasScreenBuyer(navController = navController)
+        }
+        composable(ROUT_BOOKGAS) {
+            BookGasScreen(navController = navController)
+        }
+        composable(ROUT_VIEWBOOKEDGAS) {
+            ViewBookedGascreen(navController = navController)
         }
 
     }

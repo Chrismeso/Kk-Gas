@@ -37,6 +37,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,6 +46,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
 import com.example.kkgas.navigation.ROUT_MOREINFO
+import com.example.kkgas.ui.theme.green
 import com.example.kkgas.ui.theme.lightgreen
 import com.example.kkgas.ui.theme.wondergreen
 
@@ -155,6 +157,7 @@ fun DetailsScreen(navController: NavController){
                     }
                 }
 
+
                         Column (
                             modifier = Modifier.padding(10.dp)
                         ){
@@ -169,6 +172,24 @@ fun DetailsScreen(navController: NavController){
                                 modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                                 fontFamily = FontFamily.Serif
                             )
+                            val mContext = LocalContext.current
+                            //STK
+                            Button(
+                                onClick = {  val simToolKitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                    simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(50.dp)
+                                    .padding(start = 50.dp, end = 50.dp),
+                                colors = ButtonDefaults.buttonColors(green),
+                                shape = RoundedCornerShape(10.dp)
+                            ) {
+
+                                Text(text = "Purchase")
+
+                            }
+
 
 
 
@@ -217,6 +238,23 @@ fun DetailsScreen(navController: NavController){
                                 modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                                 fontFamily = FontFamily.Serif
                             )
+                            val mContext = LocalContext.current
+                            //STK
+                            Button(
+                                onClick = {  val simToolKitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                    simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(50.dp)
+                                    .padding(start = 50.dp, end = 50.dp),
+                                colors = ButtonDefaults.buttonColors(green),
+                                shape = RoundedCornerShape(10.dp)
+                            ) {
+
+                                Text(text = "Purchase")
+
+                            }
 
 
 
@@ -249,15 +287,32 @@ fun DetailsScreen(navController: NavController){
                            horizontalAlignment = Alignment.Start){
                            Text(
                                text = "6Kg Kgas gas ",
-                               modifier = Modifier.padding(top = 90.dp, start = 100.dp),
+                               modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                                fontFamily = FontFamily.Serif
                            )
 
                            Text(
                                text = "ksh 4500 ",
-                               modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                               modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                                fontFamily = FontFamily.Serif
                            )
+                           val mContext = LocalContext.current
+                           //STK
+                           Button(
+                               onClick = {  val simToolKitLaunchIntent =
+                                   mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                   simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                               modifier = Modifier
+                                   .fillMaxWidth()
+                                   .height(50.dp)
+                                   .padding(start = 50.dp, end = 50.dp),
+                               colors = ButtonDefaults.buttonColors(green),
+                               shape = RoundedCornerShape(10.dp)
+                           ) {
+
+                               Text(text = "Purchase")
+
+                           }
 
                        }
 
@@ -290,15 +345,32 @@ fun DetailsScreen(navController: NavController){
                                horizontalAlignment = Alignment.Start){
                                Text(
                                    text = "6Kg total gas ",
-                                   modifier = Modifier.padding(top = 90.dp, start = 100.dp),
+                                   modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                                    fontFamily = FontFamily.Serif
                                )
 
                                Text(
                                    text = "ksh 4500 ",
-                                   modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                                   modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                                    fontFamily = FontFamily.Serif
                                )
+                               val mContext = LocalContext.current
+                               //STK
+                               Button(
+                                   onClick = {  val simToolKitLaunchIntent =
+                                       mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                       simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                                   modifier = Modifier
+                                       .fillMaxWidth()
+                                       .height(50.dp)
+                                       .padding(start = 50.dp, end = 50.dp),
+                                   colors = ButtonDefaults.buttonColors(green),
+                                   shape = RoundedCornerShape(10.dp)
+                               ) {
+
+                                   Text(text = "Purchase")
+
+                               }
 
 
                            }
@@ -334,24 +406,36 @@ fun DetailsScreen(navController: NavController){
                              horizontalAlignment = Alignment.Start){
                              Text(
                                  text = "6Kg Afri gas ",
-                                 modifier = Modifier.padding(top = 90.dp, start = 100.dp),
+                                 modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                                  fontFamily = FontFamily.Serif
                              )
 
                              Text(
                                  text = "ksh 5000 ",
-                                 modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                                 modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                                  fontFamily = FontFamily.Serif
                              )
+                             val mContext = LocalContext.current
+                             //STK
+                             Button(
+                                 onClick = {  val simToolKitLaunchIntent =
+                                     mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                     simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                                 modifier = Modifier
+                                     .fillMaxWidth()
+                                     .height(50.dp)
+                                     .padding(start = 50.dp, end = 50.dp),
+                                 colors = ButtonDefaults.buttonColors(green),
+                                 shape = RoundedCornerShape(10.dp)
+                             ) {
+
+                                 Text(text = "Purchae")
+
+                             }
 
 
 
                          }
-
-
-
-
-
 
          }
 
@@ -388,15 +472,33 @@ fun DetailsScreen(navController: NavController){
                 ) {
                     Text(
                         text = "13Kg total gas ",
-                        modifier = Modifier.padding(top = 50.dp, start = 100.dp),
+                        modifier = Modifier.padding(top = 90.dp, start = 20.dp),
                         fontFamily = FontFamily.Serif
                     )
 
                     Text(
                         text = "ksh 8000 ",
-                        modifier = Modifier.padding(top = 10.dp, start = 100.dp),
+                        modifier = Modifier.padding(top = 10.dp, start = 20.dp),
                         fontFamily = FontFamily.Serif
                     )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    val mContext = LocalContext.current
+                    //STK
+                    Button(
+                        onClick = {  val simToolKitLaunchIntent =
+                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                            simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp)
+                            .padding(start = 50.dp, end = 50.dp),
+                        colors = ButtonDefaults.buttonColors(green),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+
+                        Text(text = "Purchase")
+
+                    }
 
 
                 }
@@ -430,15 +532,33 @@ fun DetailsScreen(navController: NavController){
 
                     Text(
                         text = "13Kg pro gas ",
-                        modifier = Modifier.padding(top = 90.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
 
                     Text(
                         text = "ksh 7000 ",
-                        modifier = Modifier.padding(top = 30.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    val mContext = LocalContext.current
+                    //STK
+                    Button(
+                        onClick = {  val simToolKitLaunchIntent =
+                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                            simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp)
+                            .padding(start = 50.dp, end = 50.dp),
+                        colors = ButtonDefaults.buttonColors(green),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+
+                        Text(text = "Purchase")
+
+                    }
 
                 }
 
@@ -472,15 +592,33 @@ fun DetailsScreen(navController: NavController){
                 ) {
                     Text(
                         text = "Sea gas ",
-                        modifier = Modifier.padding(top = 90.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
 
                     Text(
                         text = "ksh 6500 ",
-                        modifier = Modifier.padding(top = 30.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    val mContext = LocalContext.current
+                    //STK
+                    Button(
+                        onClick = {  val simToolKitLaunchIntent =
+                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                            simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp)
+                            .padding(start = 50.dp, end = 50.dp),
+                        colors = ButtonDefaults.buttonColors(green),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+
+                        Text(text = "Purchase")
+
+                    }
 
                 }
 
@@ -513,15 +651,33 @@ fun DetailsScreen(navController: NavController){
                 ) {
                     Text(
                         text = "13Kg rubis gas ",
-                        modifier = Modifier.padding(top = 90.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
 
                     Text(
                         text = "ksh 6500 ",
-                        modifier = Modifier.padding(top = 30.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    val mContext = LocalContext.current
+                    //STK
+                    Button(
+                        onClick = {  val simToolKitLaunchIntent =
+                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                            simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp)
+                            .padding(start = 50.dp, end = 50.dp),
+                        colors = ButtonDefaults.buttonColors(green),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+
+                        Text(text = "Purchase")
+
+                    }
 
 
                 }
@@ -557,15 +713,33 @@ fun DetailsScreen(navController: NavController){
                 ) {
                     Text(
                         text = "13Kg mpishi gas ",
-                        modifier = Modifier.padding(top = 90.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
 
                     Text(
                         text = "ksh 7000 ",
-                        modifier = Modifier.padding(top = 30.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    val mContext = LocalContext.current
+                    //STK
+                    Button(
+                        onClick = {  val simToolKitLaunchIntent =
+                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                            simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp)
+                            .padding(start = 50.dp, end = 50.dp),
+                        colors = ButtonDefaults.buttonColors(green),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+
+                        Text(text = "Purchase")
+
+                    }
 
 
                 }
@@ -601,15 +775,33 @@ fun DetailsScreen(navController: NavController){
                 ) {
                     Text(
                         text = "13Kg Afri gas ",
-                        modifier = Modifier.padding(top = 90.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
 
                     Text(
                         text = "ksh 6000 ",
-                        modifier = Modifier.padding(top = 30.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    val mContext = LocalContext.current
+                    //STK
+                    Button(
+                        onClick = {  val simToolKitLaunchIntent =
+                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                            simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp)
+                            .padding(start = 50.dp, end = 50.dp),
+                        colors = ButtonDefaults.buttonColors(green),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+
+                        Text(text = "Purchase")
+
+                    }
 
 
                 }
@@ -643,15 +835,34 @@ fun DetailsScreen(navController: NavController){
                 ) {
                     Text(
                         text = "13Kg Safe gas ",
-                        modifier = Modifier.padding(top = 90.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 90.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
                     )
 
                     Text(
                         text = "ksh 6500 ",
-                        modifier = Modifier.padding(top = 30.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 10.dp, start = 10.dp),
                         fontFamily = FontFamily.Serif
-                    )
+                            )
+                    Spacer(modifier = Modifier.height(10.dp))
+                     val mContext = LocalContext.current
+                    //STK
+                    Button(
+                        onClick = {  val simToolKitLaunchIntent =
+                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                            simToolKitLaunchIntent?.let { mContext.startActivity(it) } },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp)
+                            .padding(start = 50.dp, end = 50.dp),
+                        colors = ButtonDefaults.buttonColors(green),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+
+                        Text(text = "Purchase")
+
+                    }
+
 
 
                 }
@@ -669,9 +880,10 @@ fun DetailsScreen(navController: NavController){
             shape = RoundedCornerShape(10.dp)
         ) {
 
-            Text(text = "Get Started")
+            Text(text = "Know more")
 
         }
+        Spacer(modifier = Modifier.height(40.dp))
 
         }
 

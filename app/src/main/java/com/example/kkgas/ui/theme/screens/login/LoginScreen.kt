@@ -162,8 +162,9 @@ fun LoginScreen(navController: NavController){
             Spacer(modifier = Modifier.height(20.dp))
 
             Button(
-                onClick = { authViewModel.login(email, password)
-                          navController.navigate(ROUT_HOME)},
+                onClick = {
+                    authViewModel.login(email, password)
+                         },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp)

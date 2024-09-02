@@ -22,9 +22,13 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.outlined.Add
+import androidx.compose.material.icons.outlined.Edit
+import androidx.compose.material.icons.outlined.Face
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.Badge
@@ -81,7 +85,7 @@ fun AddGasScreen(navController:NavController){
         Scaffold(
             bottomBar = {
                 NavigationBar (
-                    containerColor = Color.LightGray,
+                    containerColor = Color.DarkGray,
                     contentColor = Color.Black){
                     bottomNavItems.forEachIndexed { index, bottomNavItem ->
                         NavigationBarItem(
@@ -231,23 +235,21 @@ val bottomNavItems = listOf(
     ),
 
 
-
-    BottomNavItem(
-        title = "Upload",
-        route="add_products",
-        selectedIcon= Icons.Filled.Add,
-        unselectedIcon= Icons.Outlined.Add,
-        hasNews = true,
-        badges=0
-    ),
-
     BottomNavItem(
         title = "View",
-        route="view_products",
-        selectedIcon= Icons.Filled.Info,
-        unselectedIcon= Icons.Outlined.Info,
-        hasNews = true,
+        route="viewgas",
+        selectedIcon= Icons.Filled.Edit,
+        unselectedIcon= Icons.Outlined.Edit,
+        hasNews = false,
         badges=1
+    ),
+    BottomNavItem(
+        title = "Bookings",
+        route="viewbookedgas",
+        selectedIcon= Icons.Filled.Face,
+        unselectedIcon= Icons.Outlined.Face,
+        hasNews = false,
+        badges=0
     ),
 
 
