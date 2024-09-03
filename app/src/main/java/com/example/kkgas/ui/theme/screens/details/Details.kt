@@ -568,8 +568,8 @@ fun DetailsScreen(navController: NavController){
             Row(modifier = Modifier.padding(20.dp)) {
                 Card(
                     modifier = Modifier
-                        .height(180.dp)
-                        .width(200.dp)
+                        .height(140.dp)
+                        .width(160.dp)
                 ) {
 
 
@@ -629,8 +629,8 @@ fun DetailsScreen(navController: NavController){
             Row(modifier = Modifier.padding(20.dp)) {
                 Card(
                     modifier = Modifier
-                        .height(180.dp)
-                        .width(200.dp)
+                        .height(140.dp)
+                        .width(160.dp)
                 ) {
 
 
@@ -690,8 +690,8 @@ fun DetailsScreen(navController: NavController){
             Row(modifier = Modifier.padding(20.dp)) {
                 Card(
                     modifier = Modifier
-                        .height(160.dp)
-                        .width(180.dp)
+                        .height(140.dp)
+                        .width(160.dp)
                 ) {
 
 

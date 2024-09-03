@@ -7,6 +7,7 @@ import android.provider.MediaStore
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -68,6 +69,8 @@ import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.data.GasViewModel
 import com.example.kkgas.models.Gas
 import com.example.kkgas.navigation.ROUT_ADDGAS
+import com.example.kkgas.navigation.ROUT_MOREINFO
+import com.example.kkgas.ui.theme.home
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -77,6 +80,7 @@ fun AddGasScreen(navController:NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()
+
         ,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -98,7 +102,7 @@ fun AddGasScreen(navController:NavController){
                                 BadgedBox(
                                     badge = {
                                         if (bottomNavItem.badges != 0) {
-                                            Badge (containerColor = Color.White){
+                                            Badge (containerColor = Color.Black){
                                                 Text(text = bottomNavItem.badges.toString())
                                             }
                                         } else if (bottomNavItem.hasNews) {
@@ -126,8 +130,8 @@ fun AddGasScreen(navController:NavController){
             floatingActionButton = {
                 FloatingActionButton(
                     onClick = { /*TODO*/ },
-                    containerColor = Color.LightGray
-                ) {
+                    containerColor = Color.Blue)
+                {
                     IconButton(onClick = {
                         navController.navigate(ROUT_ADDGAS)
                     }) {
@@ -141,7 +145,7 @@ fun AddGasScreen(navController:NavController){
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .verticalScroll(rememberScrollState())
+                        .verticalScroll(rememberScrollState()).background(home)
                     ,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ){
@@ -167,7 +171,8 @@ fun AddGasScreen(navController:NavController){
                         value = gasName,
                         onValueChange = { gasName = it },
                         label = { Text(text = "Enter gas name ") },
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+                        shape = RoundedCornerShape(10.dp)
                     )
 
                     Spacer(modifier = Modifier.height(10.dp))
@@ -176,7 +181,8 @@ fun AddGasScreen(navController:NavController){
                         value =gasQuantity,
                         onValueChange = { gasQuantity = it },
                         label = { Text(text = "Gas quantity e.g kg ") },
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+                        shape = RoundedCornerShape(10.dp)
                     )
 
                     Spacer(modifier = Modifier.height(10.dp))
@@ -185,7 +191,8 @@ fun AddGasScreen(navController:NavController){
                         value = gasPrice,
                         onValueChange = { gasPrice = it },
                         label = { Text(text = "Product price e.g Ksh.500") },
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+                        shape = RoundedCornerShape(10.dp)
                     )
 
                     Spacer(modifier = Modifier.height(20.dp))
@@ -194,7 +201,8 @@ fun AddGasScreen(navController:NavController){
                         value = phone,
                         onValueChange = { phone = it },
                         label = { Text(text = "Phone") },
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+                        shape = RoundedCornerShape(10.dp)
                     )
 
                     Spacer(modifier = Modifier.height(20.dp))
@@ -213,9 +221,8 @@ fun AddGasScreen(navController:NavController){
                 }
 
 
-
-
             }
+
 
         )
 
@@ -234,23 +241,6 @@ val bottomNavItems = listOf(
         badges=0
     ),
 
-
-    BottomNavItem(
-        title = "View",
-        route="viewgas",
-        selectedIcon= Icons.Filled.Edit,
-        unselectedIcon= Icons.Outlined.Edit,
-        hasNews = false,
-        badges=1
-    ),
-    BottomNavItem(
-        title = "Bookings",
-        route="viewbookedgas",
-        selectedIcon= Icons.Filled.Face,
-        unselectedIcon= Icons.Outlined.Face,
-        hasNews = false,
-        badges=0
-    ),
 
 
     )
@@ -302,7 +292,7 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context, navController: 
                     imagePicker.launch("image/*")
                 },
                 shape = RoundedCornerShape(5.dp),
-                colors = ButtonDefaults.buttonColors(Color.Gray)
+                colors = ButtonDefaults.buttonColors(Color.Black)
             ) {
                 Text(
                     text = "Select Image"
@@ -319,7 +309,7 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context, navController: 
 
             },
                 shape = RoundedCornerShape(5.dp),
-                colors = ButtonDefaults.buttonColors(Color.Gray)) {
+                colors = ButtonDefaults.buttonColors(Color.Black)) {
                 Text(text = "Upload")
             }
         }

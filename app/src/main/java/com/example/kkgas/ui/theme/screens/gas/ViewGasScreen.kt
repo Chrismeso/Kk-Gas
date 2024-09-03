@@ -97,7 +97,7 @@ fun ViewGasScreen(navController:NavHostController) {
                                 BadgedBox(
                                     badge = {
                                         if (bottomNavItem.badges != 0) {
-                                            Badge (containerColor = Color.White){
+                                            Badge (containerColor = Color.Black){
                                                 Text(text = bottomNavItem.badges.toString())
                                             }
                                         } else if (bottomNavItem.hasNews) {

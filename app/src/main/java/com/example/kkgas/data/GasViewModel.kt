@@ -10,6 +10,7 @@ import androidx.navigation.NavController
 import com.example.kkgas.models.Gas
 import com.example.kkgas.navigation.ROUT_ADDGAS
 import com.example.kkgas.navigation.ROUT_LOGIN
+import com.example.kkgas.navigation.ROUT_VIEWGAS
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -45,6 +46,7 @@ class GasViewModel(var navController: NavController, var context: Context) {
                         .child("Products/$productId")
                     databaseRef.setValue(product).addOnCompleteListener {
                         if (it.isSuccessful){
+                            navController.navigate(ROUT_VIEWGAS)
                             Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
