@@ -10,6 +10,7 @@ import androidx.navigation.NavController
 import com.example.kkgas.models.Book
 import com.example.kkgas.navigation.ROUT_BOOKGAS
 import com.example.kkgas.navigation.ROUT_LOGIN
+import com.example.kkgas.navigation.ROUT_VIEWBOOKEDGAS
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -33,7 +34,7 @@ class BookViewModel(var navController: NavController, var context: Context) {
     fun addAccount(name:String, email:String, gas:String, filePath: Uri){
         val accountId = System.currentTimeMillis().toString()
         val storageRef = FirebaseStorage.getInstance().getReference()
-            .child("Accounts/$accountId")
+            .child("Books/$accountId")
         progress.show()
         storageRef.putFile(filePath).addOnCompleteListener{
             progress.dismiss()
@@ -43,7 +44,7 @@ class BookViewModel(var navController: NavController, var context: Context) {
                     var imageUrl = it.toString()
                     var account = Book(name,gas,email,imageUrl,accountId)
                     var databaseRef = FirebaseDatabase.getInstance().getReference()
-                        .child("Accounts/$accountId")
+                        .child("Books/$accountId")
                     databaseRef.setValue(account).addOnCompleteListener {
                         if (it.isSuccessful){
                             navController.navigate(ROUT_BOOKGAS)
@@ -61,7 +62,7 @@ class BookViewModel(var navController: NavController, var context: Context) {
 
     fun ViewBookedGas(account: MutableState<Book>, accounts: SnapshotStateList<Book>):SnapshotStateList<Book>{
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Account")
+            .child("Books")
         ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 accounts.clear()

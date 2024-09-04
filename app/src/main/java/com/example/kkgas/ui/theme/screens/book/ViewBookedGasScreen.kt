@@ -46,14 +46,11 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.kkgas.data.BookViewModel
 import com.example.kkgas.models.Book
 
-
-@OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun ViewBookedGascreen(navController: NavController) {
     Column(modifier = Modifier
-        .fillMaxSize()
-        .verticalScroll(rememberScrollState()),
+        .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally) {
 
         var context = LocalContext.current

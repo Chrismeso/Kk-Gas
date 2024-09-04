@@ -62,6 +62,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.kkgas.data.GasViewModel
 import com.example.kkgas.models.Gas
 import com.example.kkgas.navigation.ROUT_ADDGAS
+import com.example.kkgas.ui.theme.home
 
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -147,15 +147,11 @@ fun HomeScreen(navController:NavController) {
                                 modifier = Modifier
                                     .fillMaxSize()
                                     .size(300.dp)
-                                    .clip(shape = CircleShape).padding(30.dp),
+                                    .clip(shape = CircleShape).padding(50.dp),
                                 contentScale = ContentScale.Crop
                             )
 
-
-
-
-
-                    Spacer(modifier = Modifier.height(10.dp))
+                    Spacer(modifier = Modifier.height(5.dp))
 
                     Text(
                         text = "Welcome to Kk Gas",
@@ -173,19 +169,23 @@ fun HomeScreen(navController:NavController) {
 
                     Text(
                         text = "Most reliable business in town!",
-                        fontSize = 25.sp
+                        fontSize = 15.sp
                     )
                     Spacer(modifier = Modifier.height(10.dp))
 
                     Text(
-                        text = "With managable costs",
-                        fontSize = 25.sp
+                        text = "With manageable costs",
+                        fontSize = 15.sp
 
                     )
                     Text(
-                        text = " and delivery anytime anywhere",
-                        fontSize = 25.sp
+                        text = "and delivery",
+                        fontSize = 15.sp,
+                        )
 
+                    Text(
+                        text = "anytime anywhere",
+                        fontSize = 15.sp,
                     )
 
 

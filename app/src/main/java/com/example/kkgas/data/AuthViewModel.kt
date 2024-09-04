@@ -8,6 +8,7 @@ import com.example.kkgas.models.User
 import com.example.kkgas.navigation.ROUT_ADDGAS
 
 import com.example.kkgas.navigation.ROUT_DASHBOARD
+import com.example.kkgas.navigation.ROUT_DASHBOARDADMIN
 import com.example.kkgas.navigation.ROUT_HOME
 import com.example.kkgas.navigation.ROUT_LOGIN
 import com.example.kkgas.navigation.ROUT_SIGNUP
@@ -87,7 +88,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful ){
                     Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
-                    navController.navigate(ROUT_ADDGAS)
+                    navController.navigate(ROUT_DASHBOARDADMIN)
                 }else{
                     Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
                 }

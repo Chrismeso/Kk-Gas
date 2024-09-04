@@ -48,11 +48,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -61,6 +63,7 @@ import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
+import com.example.kkgas.ui.theme.home
 import com.example.kkgas.ui.theme.lightgreen
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -109,8 +112,8 @@ fun MoreInfoScreen(navController: NavController){
             },
             topBar = {
                 TopAppBar(
-                    title = { Text(text = "Kk Gas") },
-                    colors = TopAppBarDefaults.mediumTopAppBarColors(lightgreen)
+                    title = { Text(text = "Kk Gas", fontFamily = FontFamily.Serif, fontSize = 30.sp) },
+                    colors = TopAppBarDefaults.mediumTopAppBarColors(home)
                 )
             },
 
@@ -128,7 +131,7 @@ fun MoreInfoScreen(navController: NavController){
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(top = 60.dp),
+                        .padding(top = 90.dp).verticalScroll(rememberScrollState()),
 
                     ){
 
@@ -155,7 +158,7 @@ fun MoreInfoScreen(navController: NavController){
                                     modifier = Modifier
                                         .align(Alignment.TopStart)
                                         .padding(2.dp),
-                                    tint = lightgreen
+                                    tint = Color.Red
                                     )
 
 
@@ -190,7 +193,7 @@ fun MoreInfoScreen(navController: NavController){
                                     callIntent.data="tel:0112577059".toUri()
                                     mContext.startActivity(callIntent)
                                 },
-                                colors = ButtonDefaults.buttonColors(lightgreen),
+                                colors = ButtonDefaults.buttonColors(Color.Blue),
                                 shape = RoundedCornerShape(10.dp)
                             ) {
                                 Text(text = "Call")
@@ -214,7 +217,7 @@ fun MoreInfoScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 20.dp, end = 20.dp),
-                        colors = ButtonDefaults.buttonColors(lightgreen),
+                        colors = ButtonDefaults.buttonColors(Color.Blue),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -232,7 +235,7 @@ fun MoreInfoScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 20.dp, end = 20.dp),
-                        colors = ButtonDefaults.buttonColors(lightgreen),
+                        colors = ButtonDefaults.buttonColors(Color.Blue),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -252,7 +255,7 @@ fun MoreInfoScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 20.dp, end = 10.dp),
-                        colors = ButtonDefaults.buttonColors(lightgreen),
+                        colors = ButtonDefaults.buttonColors(Color.Blue),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -264,11 +267,20 @@ fun MoreInfoScreen(navController: NavController){
                         text = "We are looking forward to work with you thank you for choosing Kk Gas",
                         fontSize = 30.sp,
                         textAlign = TextAlign.Center,
-                        fontFamily = FontFamily.Cursive
+                        fontFamily = FontFamily.Cursive,
+                        fontWeight = FontWeight.Bold
                         )
 
+                        Image(
+                            painter = painterResource(id = R.drawable.welcome),
+                            contentDescription = "home",
+                            modifier = Modifier
+                                .size(90.dp),
+                            contentScale = ContentScale.Crop
 
-                }
+                        )
+                    }
+
 
             }
 

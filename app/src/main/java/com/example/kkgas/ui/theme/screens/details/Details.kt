@@ -1,6 +1,7 @@
 package com.example.kkgas.ui.theme.screens.details
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -47,6 +48,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.kkgas.R
 import com.example.kkgas.navigation.ROUT_MOREINFO
 import com.example.kkgas.ui.theme.green
+import com.example.kkgas.ui.theme.home
 import com.example.kkgas.ui.theme.lightgreen
 import com.example.kkgas.ui.theme.wondergreen
 
@@ -58,7 +60,7 @@ fun DetailsScreen(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())
+            .verticalScroll(rememberScrollState()).background(home)
 
 
     ) {
@@ -95,25 +97,17 @@ fun DetailsScreen(navController: NavController){
                 }
             }
         )
-
-
-        Box (modifier = Modifier.height(280.dp), contentAlignment = Alignment.Center){
+        Box (modifier = Modifier.height(200.dp), contentAlignment = Alignment.Center) {
 
             Image(
                 painter = painterResource(id = R.drawable.gashome),
-                contentDescription ="home",
+                contentDescription = "home",
                 modifier = Modifier.fillMaxSize()
             )
-
-
-
-
-
-
-
-            Spacer(modifier = Modifier.height(20.dp))
-
         }
+
+
+        Spacer(modifier = Modifier.height(20.dp))
 
         //SEARCHBAR
         var search by remember { mutableStateOf("") }
@@ -182,7 +176,7 @@ fun DetailsScreen(navController: NavController){
                                     .fillMaxWidth()
                                     .height(50.dp)
                                     .padding(start = 50.dp, end = 50.dp),
-                                colors = ButtonDefaults.buttonColors(green),
+                                colors = ButtonDefaults.buttonColors(Color.Black),
                                 shape = RoundedCornerShape(10.dp)
                             ) {
 
@@ -248,7 +242,7 @@ fun DetailsScreen(navController: NavController){
                                     .fillMaxWidth()
                                     .height(50.dp)
                                     .padding(start = 50.dp, end = 50.dp),
-                                colors = ButtonDefaults.buttonColors(green),
+                                colors = ButtonDefaults.buttonColors(Color.Black),
                                 shape = RoundedCornerShape(10.dp)
                             ) {
 
@@ -306,7 +300,7 @@ fun DetailsScreen(navController: NavController){
                                    .fillMaxWidth()
                                    .height(50.dp)
                                    .padding(start = 50.dp, end = 50.dp),
-                               colors = ButtonDefaults.buttonColors(green),
+                               colors = ButtonDefaults.buttonColors(Color.Black),
                                shape = RoundedCornerShape(10.dp)
                            ) {
 
@@ -364,7 +358,7 @@ fun DetailsScreen(navController: NavController){
                                        .fillMaxWidth()
                                        .height(50.dp)
                                        .padding(start = 50.dp, end = 50.dp),
-                                   colors = ButtonDefaults.buttonColors(green),
+                                   colors = ButtonDefaults.buttonColors(Color.Black),
                                    shape = RoundedCornerShape(10.dp)
                                ) {
 
@@ -374,7 +368,6 @@ fun DetailsScreen(navController: NavController){
 
 
                            }
-
 
 
 
@@ -425,7 +418,7 @@ fun DetailsScreen(navController: NavController){
                                      .fillMaxWidth()
                                      .height(50.dp)
                                      .padding(start = 50.dp, end = 50.dp),
-                                 colors = ButtonDefaults.buttonColors(green),
+                                 colors = ButtonDefaults.buttonColors(Color.Black),
                                  shape = RoundedCornerShape(10.dp)
                              ) {
 
@@ -442,7 +435,6 @@ fun DetailsScreen(navController: NavController){
         }
         //Row2
         Row(modifier = Modifier
-            .padding(40.dp)
             .horizontalScroll(rememberScrollState())) {
             //CARD 1
 
@@ -450,8 +442,8 @@ fun DetailsScreen(navController: NavController){
 
                 Card(
                     modifier = Modifier
-                        .height(160.dp)
-                        .width(180.dp)
+                        .height(180.dp)
+                        .width(160.dp)
                 ) {
 
 
@@ -472,13 +464,13 @@ fun DetailsScreen(navController: NavController){
                 ) {
                     Text(
                         text = "13Kg total gas ",
-                        modifier = Modifier.padding(top = 90.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 90.dp, end = 2.dp),
                         fontFamily = FontFamily.Serif
                     )
 
                     Text(
                         text = "ksh 8000 ",
-                        modifier = Modifier.padding(top = 10.dp, start = 20.dp),
+                        modifier = Modifier.padding(top = 10.dp, start = 2.dp),
                         fontFamily = FontFamily.Serif
                     )
                     Spacer(modifier = Modifier.height(10.dp))
@@ -491,8 +483,8 @@ fun DetailsScreen(navController: NavController){
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp)
-                            .padding(start = 50.dp, end = 50.dp),
-                        colors = ButtonDefaults.buttonColors(green),
+                            .padding(start = 30.dp, end = 30.dp),
+                        colors = ButtonDefaults.buttonColors(Color.Black),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -552,7 +544,7 @@ fun DetailsScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 50.dp, end = 50.dp),
-                        colors = ButtonDefaults.buttonColors(green),
+                        colors = ButtonDefaults.buttonColors(Color.Black),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -568,8 +560,8 @@ fun DetailsScreen(navController: NavController){
             Row(modifier = Modifier.padding(20.dp)) {
                 Card(
                     modifier = Modifier
-                        .height(140.dp)
-                        .width(160.dp)
+                        .height(160.dp)
+                        .width(180.dp)
                 ) {
 
 
@@ -612,7 +604,7 @@ fun DetailsScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 50.dp, end = 50.dp),
-                        colors = ButtonDefaults.buttonColors(green),
+                        colors = ButtonDefaults.buttonColors(Color.Black),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -629,8 +621,8 @@ fun DetailsScreen(navController: NavController){
             Row(modifier = Modifier.padding(20.dp)) {
                 Card(
                     modifier = Modifier
-                        .height(140.dp)
-                        .width(160.dp)
+                        .height(160.dp)
+                        .width(180.dp)
                 ) {
 
 
@@ -733,7 +725,7 @@ fun DetailsScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 50.dp, end = 50.dp),
-                        colors = ButtonDefaults.buttonColors(green),
+                        colors = ButtonDefaults.buttonColors(Color.Black),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -795,7 +787,7 @@ fun DetailsScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 50.dp, end = 50.dp),
-                        colors = ButtonDefaults.buttonColors(green),
+                        colors = ButtonDefaults.buttonColors(Color.Black),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -855,7 +847,7 @@ fun DetailsScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 50.dp, end = 50.dp),
-                        colors = ButtonDefaults.buttonColors(green),
+                        colors = ButtonDefaults.buttonColors(Color.Black),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -880,17 +872,12 @@ fun DetailsScreen(navController: NavController){
             shape = RoundedCornerShape(10.dp)
         ) {
 
-            Text(text = "Know more")
+            Text(text = "For inquiries")
 
         }
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(90.dp))
 
         }
-
-
-
-
-
 
 
 

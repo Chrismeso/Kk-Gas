@@ -110,7 +110,7 @@ fun ViewGasScreenBuyer(navController:NavHostController) {
                         .fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "All products",
+                    Text(text = "Our products",
                         fontSize = 30.sp,
                         fontFamily = FontFamily.Cursive,
                         color = Color.Red)
