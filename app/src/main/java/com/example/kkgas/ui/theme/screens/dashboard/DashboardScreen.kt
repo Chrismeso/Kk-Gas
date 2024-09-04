@@ -25,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -45,14 +46,15 @@ fun DashboardScreen(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState()),
+            .verticalScroll(rememberScrollState()).padding(top = 20.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
         text = "Welcome to Kk gas",
         fontSize = 40.sp,
         fontFamily = FontFamily.Cursive,
-        color = Color.Green
+        color = Color.Green,
+            fontWeight = FontWeight.Bold
 
     )
         Image(
@@ -67,7 +69,8 @@ fun DashboardScreen(navController: NavController){
             text = "Get your preferencial gas here",
             fontSize = 20.sp,
             fontFamily = FontFamily.SansSerif,
-            color = Color.Green
+            color = Color.Green,
+            fontWeight = FontWeight.Bold
 
         )
         Spacer(modifier = Modifier.height(20.dp))

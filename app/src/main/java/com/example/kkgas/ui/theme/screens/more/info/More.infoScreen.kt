@@ -3,6 +3,7 @@ package com.example.kkgas.ui.theme.screens.more.info
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -31,6 +32,7 @@ import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardElevation
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -131,7 +133,7 @@ fun MoreInfoScreen(navController: NavController){
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(top = 90.dp).verticalScroll(rememberScrollState()),
+                        .padding(top = 90.dp),
 
                     ){
 
@@ -184,7 +186,7 @@ fun MoreInfoScreen(navController: NavController){
                                 fontFamily = FontFamily.Serif
                                 )
                             Text(
-                                text = "14,400 Reviews",
+                                text = "Over 500 reviews",
                                 fontFamily = FontFamily.Serif
                             )
                             val mContext = LocalContext.current
@@ -193,7 +195,7 @@ fun MoreInfoScreen(navController: NavController){
                                     callIntent.data="tel:0112577059".toUri()
                                     mContext.startActivity(callIntent)
                                 },
-                                colors = ButtonDefaults.buttonColors(Color.Blue),
+                                colors = ButtonDefaults.buttonColors(Color.Black),
                                 shape = RoundedCornerShape(10.dp)
                             ) {
                                 Text(text = "Call")
@@ -217,7 +219,7 @@ fun MoreInfoScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 20.dp, end = 20.dp),
-                        colors = ButtonDefaults.buttonColors(Color.Blue),
+                        colors = ButtonDefaults.buttonColors(Color.Black),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -235,7 +237,7 @@ fun MoreInfoScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 20.dp, end = 20.dp),
-                        colors = ButtonDefaults.buttonColors(Color.Blue),
+                        colors = ButtonDefaults.buttonColors(Color.Black),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -255,7 +257,7 @@ fun MoreInfoScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 20.dp, end = 10.dp),
-                        colors = ButtonDefaults.buttonColors(Color.Blue),
+                        colors = ButtonDefaults.buttonColors(Color.Black),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -271,15 +273,9 @@ fun MoreInfoScreen(navController: NavController){
                         fontWeight = FontWeight.Bold
                         )
 
-                        Image(
-                            painter = painterResource(id = R.drawable.welcome),
-                            contentDescription = "home",
-                            modifier = Modifier
-                                .size(90.dp),
-                            contentScale = ContentScale.Crop
 
-                        )
-                    }
+                        }
+
 
 
             }

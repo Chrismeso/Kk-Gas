@@ -110,7 +110,7 @@ fun BookGasScreen(navController:NavController){
             label = { Text(text = "Buyer Full name  ") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             trailingIcon =  { Icon(imageVector = Icons.Default.Person, contentDescription = "person", tint = Brown) },
-            shape = RoundedCornerShape(10.dp)
+            shape = RoundedCornerShape(30.dp)
         )
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -122,7 +122,8 @@ fun BookGasScreen(navController:NavController){
             label = { Text(text = "Input gas ") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             trailingIcon =  { Icon(imageVector = Icons.Default.Check, contentDescription = "", tint = Brown) },
-            shape = RoundedCornerShape(10.dp)
+            shape = RoundedCornerShape(30.dp),
+
         )
 
 
@@ -135,7 +136,7 @@ fun BookGasScreen(navController:NavController){
             label = { Text(text = "Email Address ") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             trailingIcon =  { Icon(imageVector = Icons.Default.Email, contentDescription = "person", tint = Brown) },
-            shape = RoundedCornerShape(10.dp)
+            shape = RoundedCornerShape(30.dp)
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -146,7 +147,7 @@ fun BookGasScreen(navController:NavController){
             label = { Text(text = "Address ") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             trailingIcon =  { Icon(imageVector = Icons.Default.LocationOn, contentDescription = "person", tint = Brown) },
-            shape = RoundedCornerShape(10.dp)
+            shape = RoundedCornerShape(30.dp)
         )
 
 

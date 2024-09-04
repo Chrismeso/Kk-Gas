@@ -2,6 +2,7 @@ package com.example.kkgas.ui.theme.screens.book
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -45,12 +46,13 @@ import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
 import com.example.kkgas.data.BookViewModel
 import com.example.kkgas.models.Book
+import com.example.kkgas.ui.theme.home
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun ViewBookedGascreen(navController: NavController) {
     Column(modifier = Modifier
-        .fillMaxSize(),
+        .fillMaxSize().background(home),
         horizontalAlignment = Alignment.CenterHorizontally) {
 
         var context = LocalContext.current

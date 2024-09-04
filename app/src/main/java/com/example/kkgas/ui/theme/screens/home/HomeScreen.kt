@@ -160,7 +160,7 @@ fun HomeScreen(navController:NavController) {
 
 
                     )
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(10.dp))
                     Text(
                         text = "Get your gas wih Kk gas",
                         fontSize = 25.sp
@@ -205,7 +205,7 @@ fun HomeScreen(navController:NavController) {
 
 
 
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(10.dp))
 
                     Button(
                         onClick = { navController.navigate(ROUT_DASHBOARD) },
@@ -217,7 +217,7 @@ fun HomeScreen(navController:NavController) {
                     }
 
 
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(10.dp))
 
 
 
@@ -233,7 +233,7 @@ fun HomeScreen(navController:NavController) {
 
 
 
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(10.dp))
 
                     Button(
                         onClick = { navController.navigate(ROUT_BOOKGAS) },

@@ -54,7 +54,7 @@ fun DashBoardScreenAdmin(navController: NavController){
             text = "Welcome Admin",
             fontSize = 40.sp,
             fontFamily = FontFamily.Cursive,
-            color = Color.Green
+            color = Color.Black
 
         )
         Image(
@@ -69,7 +69,7 @@ fun DashBoardScreenAdmin(navController: NavController){
             text = "Get control of your app",
             fontSize = 20.sp,
             fontFamily = FontFamily.SansSerif,
-            color = Color.Green
+            color = Color.Black
 
         )
         Spacer(modifier = Modifier.height(20.dp))
