@@ -71,8 +71,8 @@ fun ViewBookedGascreen(navController: NavController) {
 
         Text(
             text = "Booked Gas",
-            fontSize = 18.sp,
-            fontFamily = FontFamily.SansSerif
+            fontSize = 25.sp,
+            fontFamily = FontFamily.Serif
         )
 
 

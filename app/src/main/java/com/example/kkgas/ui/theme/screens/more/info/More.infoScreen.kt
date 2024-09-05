@@ -152,8 +152,7 @@ fun MoreInfoScreen(navController: NavController){
                                     contentDescription ="home",
                                     modifier = Modifier
                                         .fillMaxSize()
-                                        .padding(top = 30.dp)
-                                        .padding(start = 10.dp),
+                                       ,
                                     contentScale = ContentScale.Crop
                                 )
                                 Icon(imageVector = Icons.Default.Favorite, contentDescription = "favourite",
@@ -195,7 +194,7 @@ fun MoreInfoScreen(navController: NavController){
                                     callIntent.data="tel:0112577059".toUri()
                                     mContext.startActivity(callIntent)
                                 },
-                                colors = ButtonDefaults.buttonColors(Color.Black),
+                                colors = ButtonDefaults.buttonColors(home),
                                 shape = RoundedCornerShape(10.dp)
                             ) {
                                 Text(text = "Call")
@@ -219,7 +218,7 @@ fun MoreInfoScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 20.dp, end = 20.dp),
-                        colors = ButtonDefaults.buttonColors(Color.Black),
+                        colors = ButtonDefaults.buttonColors(home),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -237,7 +236,7 @@ fun MoreInfoScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 20.dp, end = 20.dp),
-                        colors = ButtonDefaults.buttonColors(Color.Black),
+                        colors = ButtonDefaults.buttonColors(home),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
@@ -257,7 +256,7 @@ fun MoreInfoScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 20.dp, end = 10.dp),
-                        colors = ButtonDefaults.buttonColors(Color.Black),
+                        colors = ButtonDefaults.buttonColors(home),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 

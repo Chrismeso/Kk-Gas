@@ -663,7 +663,7 @@ fun DetailsScreen(navController: NavController){
                             .fillMaxWidth()
                             .height(50.dp)
                             .padding(start = 50.dp, end = 50.dp),
-                        colors = ButtonDefaults.buttonColors(green),
+                        colors = ButtonDefaults.buttonColors(Color.Black),
                         shape = RoundedCornerShape(10.dp)
                     ) {
 
