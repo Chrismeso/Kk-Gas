@@ -207,18 +207,6 @@ fun HomeScreen(navController:NavController) {
 
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    Button(
-                        onClick = { navController.navigate(ROUT_DASHBOARD) },
-                        shape = RoundedCornerShape(topStart = 10.dp, bottomStart = 10.dp),
-                        colors = ButtonDefaults.buttonColors(Color.Black),
-                        modifier = Modifier.padding(end = 100.dp)
-                    ) {
-                        Text(text = "View our stock")
-                    }
-
-
-                    Spacer(modifier = Modifier.height(10.dp))
-
 
 
 
@@ -226,9 +214,9 @@ fun HomeScreen(navController:NavController) {
                         onClick = { navController.navigate(ROUT_DETAILS) },
                         shape = RoundedCornerShape(topStart = 10.dp, bottomStart = 10.dp),
                         colors = ButtonDefaults.buttonColors(Color.Black),
-                        modifier = Modifier.padding(start = 90.dp)
+                        modifier = Modifier.padding(start = 50.dp)
                     ) {
-                        Text(text = "Choose our gas")
+                        Text(text = "Move with us")
                     }
 
 
