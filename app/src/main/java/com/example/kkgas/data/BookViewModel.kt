@@ -82,7 +82,7 @@ class BookViewModel(var navController: NavController, var context: Context) {
 
     fun updateAccount(accountId:String){
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Account/$accountId")
+            .child("Books/$accountId")
         ref.removeValue()
         navController.navigate(ROUT_BOOKGAS)
     }
@@ -90,7 +90,7 @@ class BookViewModel(var navController: NavController, var context: Context) {
 
     fun deleteAccount(accountId:String){
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Accounts/$accountId")
+            .child("Books/$accountId")
         ref.removeValue()
         Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
     }

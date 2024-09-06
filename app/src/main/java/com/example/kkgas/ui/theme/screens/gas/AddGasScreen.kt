@@ -154,7 +154,7 @@ fun AddGasScreen(navController:NavController){
                     Spacer(modifier = Modifier.height(50.dp))
 
                     Text(
-                        text = "Upload Here!",
+                        text = "Add Stock here!",
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
                         fontFamily = FontFamily.SansSerif)

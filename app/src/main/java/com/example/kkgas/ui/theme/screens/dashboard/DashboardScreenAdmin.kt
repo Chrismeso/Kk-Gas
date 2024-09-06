@@ -36,6 +36,7 @@ import com.example.kkgas.navigation.ROUT_ADDGAS
 import com.example.kkgas.navigation.ROUT_DETAILS
 import com.example.kkgas.navigation.ROUT_MOREINFO
 import com.example.kkgas.navigation.ROUT_VIEWBOOKEDGAS
+import com.example.kkgas.navigation.ROUT_VIEWGAS
 import com.example.kkgas.navigation.ROUT_VIEWGASBUYER
 import com.example.kkgas.ui.theme.lightblue
 
@@ -156,8 +157,47 @@ fun DashBoardScreenAdmin(navController: NavController){
 
                 }
                 //end of row1
+                //Row 2
+                Row(modifier = Modifier.padding(20.dp)) {
+                    //first card
+                    Card(
+                        modifier = Modifier
+                            .width(160.dp)
+                            .height(180.dp)
+                            .clickable { navController.navigate(ROUT_VIEWGAS) },
+                        elevation = CardDefaults.cardElevation(10.dp)
+                    ) {
+                        Column {
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Box(
+                                modifier = Modifier.fillMaxWidth(),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.editicon),
+                                    contentDescription = "home",
+                                    modifier = Modifier.size(100.dp)
+                                )
+
+                            }
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Text(
+                                text = "Add product",
+                                fontSize = 18.sp,
+                                modifier = Modifier.fillMaxWidth(),
+                                textAlign = TextAlign.Center,
+                                fontFamily = FontFamily.Serif
+                            )
+                        }
+
+                    }
+                    //end of first card
 
                 }
+                //end of row1
+
+
+            }
             }
         }
     }

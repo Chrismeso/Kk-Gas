@@ -46,7 +46,7 @@ fun DashboardScreen(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState()).padding(top = 20.dp),
+            .padding(top = 20.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(

@@ -211,7 +211,7 @@ fun HomeScreen(navController:NavController) {
 
 
                     Button(
-                        onClick = { navController.navigate(ROUT_DETAILS) },
+                        onClick = { navController.navigate(ROUT_DASHBOARD) },
                         shape = RoundedCornerShape(topStart = 10.dp, bottomStart = 10.dp),
                         colors = ButtonDefaults.buttonColors(Color.Black),
                         modifier = Modifier.padding(start = 50.dp)

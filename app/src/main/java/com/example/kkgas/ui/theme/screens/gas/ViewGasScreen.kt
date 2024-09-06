@@ -72,8 +72,7 @@ import com.example.kkgas.ui.theme.home
 @Composable
 fun ViewGasScreen(navController:NavHostController) {
     Column(modifier = Modifier
-        .fillMaxSize()
-        .verticalScroll(rememberScrollState())) {
+        .fillMaxSize()) {
 
         var context = LocalContext.current
         var productRepository = GasViewModel(navController, context)
@@ -129,7 +128,7 @@ fun ViewGasScreen(navController:NavHostController) {
 
             topBar = {
                 TopAppBar(
-                    title = { Text(text = "Available Products",
+                    title = { Text(text = "Edit Products",
                         modifier = Modifier.fillMaxWidth(),
                         textAlign = TextAlign.Center,
                         fontSize = 20.sp,

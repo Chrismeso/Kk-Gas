@@ -82,8 +82,7 @@ import com.example.kkgas.ui.theme.screens.more.info.BottomNavItem
 @Composable
 fun ViewGasScreenBuyer(navController:NavHostController) {
     Column(modifier = Modifier
-        .fillMaxSize()
-        .verticalScroll(rememberScrollState()).background(home)) {
+        .fillMaxSize().background(home)) {
 
         var context = LocalContext.current
         var productRepository = GasViewModel(navController, context)

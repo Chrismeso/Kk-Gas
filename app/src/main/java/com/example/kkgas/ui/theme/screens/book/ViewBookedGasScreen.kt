@@ -53,8 +53,7 @@ import com.example.kkgas.ui.theme.home
 fun ViewBookedGascreen(navController: NavController) {
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(home)
-        .verticalScroll(rememberScrollState()),
+        .background(home),
         horizontalAlignment = Alignment.CenterHorizontally) {
 
         var context = LocalContext.current
