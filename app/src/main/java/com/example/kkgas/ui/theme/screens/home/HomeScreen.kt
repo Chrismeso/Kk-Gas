@@ -200,7 +200,7 @@ fun HomeScreen(navController:NavController) {
                         colors = ButtonDefaults.buttonColors(Color.Black),
                         modifier = Modifier.padding(end = 200.dp )
                     ) {
-                        Text(text = "Ask about us")
+                        Text(text = "Contact us")
                     }
 
 

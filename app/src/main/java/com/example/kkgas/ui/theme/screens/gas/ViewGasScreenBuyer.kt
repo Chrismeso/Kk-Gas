@@ -16,7 +16,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Call
@@ -71,6 +73,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.kkgas.data.GasViewModel
 import com.example.kkgas.models.Gas
 import com.example.kkgas.navigation.ROUT_ADDGAS
+import com.example.kkgas.ui.theme.home
 import com.example.kkgas.ui.theme.screens.more.info.BottomNavItem
 
 
@@ -78,7 +81,9 @@ import com.example.kkgas.ui.theme.screens.more.info.BottomNavItem
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun ViewGasScreenBuyer(navController:NavHostController) {
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .verticalScroll(rememberScrollState()).background(home)) {
 
         var context = LocalContext.current
         var productRepository = GasViewModel(navController, context)

@@ -34,7 +34,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -69,7 +72,10 @@ import java.util.Calendar
 fun BookGasScreen(navController:NavController){
     Column(
         modifier = Modifier
-            .fillMaxSize().background(green).padding(top = 30.dp).verticalScroll(rememberScrollState())
+            .fillMaxSize()
+            .background(green)
+            .padding(top = 30.dp)
+            .verticalScroll(rememberScrollState())
         ,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -116,16 +122,24 @@ fun BookGasScreen(navController:NavController){
         Spacer(modifier = Modifier.height(10.dp))
 
 
-        OutlinedTextField(
-            value = gas,
-            onValueChange = { gas = it },
-            label = { Text(text = "Input gas ") },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-            trailingIcon =  { Icon(imageVector = Icons.Default.Check, contentDescription = "", tint = Brown) },
-            shape = RoundedCornerShape(30.dp),
 
-        )
 
+            OutlinedTextField(
+                value = gas,
+                onValueChange = { gas = it },
+                label = { Text(text = "Input gas ") },
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+                trailingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = "",
+                        tint = Brown
+                    )
+                },
+                shape = RoundedCornerShape(30.dp),
+
+
+                )
 
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -204,6 +218,10 @@ fun BookGasScreen(navController:NavController){
         }
 
         //End of a datefield
+
+
+
+
 
 
 
